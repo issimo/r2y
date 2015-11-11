@@ -34,5 +34,8 @@ if (Meteor.isServer) {
 Router.configure({
     layoutTemplate: 'main'
 });
-Router.route('/',{name:'home',template:'home',layoutTemplate: 'home'});
+Router.route('/',{name:'home',template:'home',layoutTemplate: 'main'});
 Router.route('/capture');
+Router.route('/nav');
+Router.route('/postcard');
+Router.route('/footer');

@@ -1,13 +1,15 @@
 <template name="home">
 <div>
     <p>
-        <a id="glBtn" href="/gallery">GALLERY</a>
-        <a id="mPos" href="/myposter">MY POSTER</a>
+        <span>GALLERY</span>
+        <span><a id="mPos" href="{{pathFor route='capture'}}">MY POSTER</a></span>
     </p></div>
 <div class="posters">
+    
     {{#each images}}
-        {{>userPosters}}
+        {{>postcard}}
     {{/each}}
+    
 </div>
     <button>+ CREATE YOUR OWN</button>
         

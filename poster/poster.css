@@ -1,1 +1,38 @@
 /* Is it me you're looking for...? */
+
+body {
+    max-width:90%;
+    margin: 0 auto;
+}
+
+.posters {
+ width: 90%;
+    height: 100%;
+}
+
+.posterBg {
+    margin: 20px 20px;
+    height: 280px;
+    width:200px;
+    background-image: url('r2yPoster.jpg');
+     background-size: 200px 280px;
+    background-repeat:no-repeat;
+    display: inline-block;
+    float: left;
+}
+
+.posterBg img {
+    position: relative;
+    top:16%;
+    left:13%;
+}
+
+
+.rotate90 {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+

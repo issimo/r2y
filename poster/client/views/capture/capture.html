@@ -6,8 +6,13 @@
         
     </p>
 </div>
+    
     <form class="uploadForm">
         <input type="file" name="pic" class="myFileInput" accept="image/*">
     </form>
+
+    {{#each images}}
+        {{>postcard}}
+    {{/each}}
 
 </template>

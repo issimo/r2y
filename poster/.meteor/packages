@@ -22,3 +22,4 @@ iron:router
 twbs:bootstrap
 cfs:standard-packages
 cfs:gridfs
+mystor:device-detection

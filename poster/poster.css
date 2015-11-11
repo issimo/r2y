@@ -3,13 +3,15 @@
 body {
     max-width:90%;
     margin: 0 auto;
-    background-image:url(pix/bg1.jpg)
+    background: url('pix/bg1.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    font-family:Montserrat;
 }
 
-.posters {
- width: 90%;
-    height: 100%;
-}
+
 
 .posterBg {
     margin: 20px 20px;

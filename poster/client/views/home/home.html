@@ -1,17 +1,18 @@
 <template name="home">
-<div>
-    <p>
-        <span>GALLERY</span>
-        <span><a id="mPos" href="{{pathFor route='capture'}}">MY POSTER</a></span>
-    </p></div>
+    <div class="galCap">
+        <div>GALLERY</div>
+        <hr>
+        <div><a id="mPos" href="{{pathFor route='capture'}}">MY POSTER</a></div>
+    </div>
 <div class="posters">
-    
-    {{#each images}}
+        {{#each images}}
         {{>postcard}}
-    {{/each}}
-    
+        {{/each}}
+
 </div>
-    <button>+ CREATE YOUR OWN</button>
-        
+    <div style="text-align:center;">
+    <button style="width:80%;" class="btn btn-default btn-raised" id="newPost"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>CREATE YOUR OWN</button>
+    </div>
+    <script>$(function(){$('.posters').slimScroll({height:'600px'});});</script>
     
 </template>

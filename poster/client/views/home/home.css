@@ -1,0 +1,10 @@
+.galCap{text-align:center;display:flex;}
+.galCap div{font-size:2.7vw;margin:0 5%;}
+.galCap div:first-child{color:#fff;}
+.galCap hr{background-color:#fff;color:#fff;-webkit-transform:rotate(90deg);width:30px;height:2px;position:relative;top:8px;}
+.galCap a{text-decoration:none;color:#939598;}
+.posters{}
+
+
+
+

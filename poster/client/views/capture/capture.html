@@ -1,0 +1,13 @@
+<tempalte name="capture">
+    
+    <h1>Posters</h1>
+    <form class="uploadForm">
+        <input type="file" name="pic" class="myFileInput" accept="image/*">
+    </form>
+        <div class="posters">
+            {{#each images}}
+                {{>userPosters}}
+            {{/each}}
+        </div>
+    
+</tempalte>

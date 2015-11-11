@@ -21,3 +21,9 @@ if (Meteor.isServer) {
     // code to run on server at startup
   });
 }
+
+Router.configure({
+    layoutTemplate: 'main'
+});
+Router.route('/',{name:'home',template:'home',layoutTemplate: 'home'});
+Router.route('/capture');

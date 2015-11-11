@@ -1,21 +1,13 @@
 <head>
-  <title>r2y</title>
-  <!-- Set the viewport width for mobile devices to take advantage of the mobile editor -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <title>R2Y Poster</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <link rel="icon" href="pix/favicon.png"></link>
 </head>
 
-<body>  
-  <h1>Posters</h1>
 
-<form class="uploadForm">
-  <input type="file" name="pic" class="myFileInput" accept="image/*">
-</form>
-    <div class="posters">
-    {{#each images}}
-        {{>userPosters}}
-    {{/each}}
-    </div>
+<body>
 </body>
+
 
 <template name="userPosters">
     <div class="posterBg">

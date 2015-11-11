@@ -4,7 +4,7 @@ Template.capture.events({
         FS.Utility.eachFile(event, function(file) {
             Images.insert(file, function(err, fileObj) {
                //New doc with ID: fileObj._id and sent off the data upload using HTTP 
-                alert("Uploaded");
+                console.log(fileObj);
             });
         });
     },

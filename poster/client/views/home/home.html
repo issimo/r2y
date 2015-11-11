@@ -1,4 +1,13 @@
 <template name="home">
 
 
+    <div class="posterBg">
+            <button class="delete">&times;</button>
+        {{#if isDesktop}}
+          <img src="{{this.url store='images'}}" height="100" width="100" class="rotate90"/>
+        {{/if}}
+        {{#if isPhone}}
+          <img src="{{this.url store='images'}}" height="100" width="100"/>
+        {{/if}}
+    </div>
 </template>

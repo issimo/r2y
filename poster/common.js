@@ -1,6 +1,3 @@
-Router.route('/',{name:'poster'});
-
-
 imageStore = new FS.Store.GridFS("images", {
     //Put in optional parameters
 });

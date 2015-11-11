@@ -5,14 +5,14 @@
         <div><a id="mPos" href="{{pathFor route='capture'}}">MY POSTER</a></div>
     </div>
 <div class="posters">
-    
-    
-       
-    
-    
+        {{#each images}}
+        {{>postcard}}
+        {{/each}}
+
 </div>
     <div style="text-align:center;">
-    <button style="width:80%;" class="btn btn-default btn-raised"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>CREATE YOUR OWN</button>
+    <button style="width:80%;" class="btn btn-default btn-raised" id="newPost"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>CREATE YOUR OWN</button>
     </div>
+    <script>$(function(){$('.posters').slimScroll({height:'600px'});});</script>
     
 </template>

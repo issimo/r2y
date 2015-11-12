@@ -8,25 +8,30 @@
     var burnWidget = new BONZ.BurnWidget({
       apiKey: 'DoLRd20sriqWTjI',
       userId: 'sarg21', // A unique id that identifies this user within *your* application
-      callback: '/pix',
+
       onIndex: function(jsonResponse) {
         // Callback to be triggered when requesting all burns for this user
         console.log(jsonResponse);
       },
       onShow: function(imageSelector, jsonResponse) {
         // Callback to be triggered after the show/edit burn is popped up
+        alert("Showing");
+
         console.log(imageSelector);
         console.log(jsonResponse);
       },
       onCreate: function(imageSelector, jsonResponse) {
         // Callback to be triggered after a burn is queued/created.
         // We recommend adding your own functionality to save the id and user_id the returned in jsonResponse
+        alert("Created");
         console.log(imageSelector);
         console.log(jsonResponse);
       },
       onSave: function(imageSelector, jsonResponse) {
         // Callback to be triggered after the user selects a final mask
         // We recommend adding your own functionality to save the final_result_url the returned in jsonResponse
+        alert("Saved");
+
         console.log(jsonResponse);
         $(imageSelector).attr('src', jsonResponse.final_result_url);
       },
@@ -43,7 +48,9 @@
 
     function burnImage() {
       // Queues a new burn from the src of the image element
-      burnWidget.launch({ image: $('.dImage') });
+      //burnWidget.launch({ image: $('#dImage') });
+      
+      burnWidget.launch({ url: 'http://dailymail.com.ng/wp-content/uploads/2015/05/genevieve-nnaji2.jpg' });
     }
     
     function burnURL(el) {
@@ -70,5 +77,7 @@
 
 
 <body>
+<p><a href='#' onclick='burnImage(); return false;'>Burn image</a></p>
+  
 </body>
 

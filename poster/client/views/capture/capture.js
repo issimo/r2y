@@ -1,4 +1,11 @@
 Template.capture.events({
+    'click #fakeTap' : function(event, template) {
+        event.preventDefault();
+        $('.myFileInput').trigger('click');   
+    }
+});
+
+Template.capture.events({
     'change .myFileInput' : function(event, template) {
         //var image = event.target.files;   
         FS.Utility.eachFile(event, function(file) {

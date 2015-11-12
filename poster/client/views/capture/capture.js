@@ -20,3 +20,4 @@ Template.capture.helpers({
 		return Images.find();
 	}
 });
+

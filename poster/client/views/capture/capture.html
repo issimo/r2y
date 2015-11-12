@@ -1,18 +1,20 @@
 <template name="capture">
-<div>
-    <p>
-        <button class="delete"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-        <button class="refresh"><span class="glyphicon glyphicon-repeat" aria-hidden="true"></span></button>
-        
-    </p>
+    <div class="cptCnt container-fluid">
+        <div class="row">
+            <div class="col-md-2"><img class="cancel img-responsive" src="pix/cancel.png"></div>
+            <div class="col-md-2 col-md-offset-8" style="text-align:right;"><img class="retake img-responsive" src="pix/retake.png"></div>
+        </div>
+
+    <div class="row face">
+        <p id="fakeTap">TAP TO CAPTURE</p>
+        <form class="uploadForm">
+            <input type="file" name="pic" class="myFileInput" accept="image/*">
+        </form>
+
+        </div>
 </div>
-    
-    <form class="uploadForm">
-        <input type="file" name="pic" class="myFileInput" accept="image/*">
-    </form>
-
-    {{#each images}}
-        {{>postcard}}
-    {{/each}}
-
+    <script>$('#fakeTap').click(function(e) {
+    e.preventDefault();
+    $('.myFileInput').trigger('click');   
+});</script>
 </template>

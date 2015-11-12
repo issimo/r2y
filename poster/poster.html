@@ -8,6 +8,7 @@
     var burnWidget = new BONZ.BurnWidget({
       apiKey: 'DoLRd20sriqWTjI',
       userId: 'sarg21', // A unique id that identifies this user within *your* application
+      callback: '/pix',
       onIndex: function(jsonResponse) {
         // Callback to be triggered when requesting all burns for this user
         console.log(jsonResponse);
@@ -47,9 +48,11 @@
     
     function burnURL(el) {
       // Queues a new burn from a URL
-      burnWidget.launch({ url: $(el).attr('href') });
+      imgUrl = $(el).attr('href');
+      path = "localhost:3000"+imgUrl;
+      console.log(path);
+      burnWidget.launch({ url: path });
     }
-
 
     function viewBurns() {
       // Gets all in progress/complete burns for the user identified

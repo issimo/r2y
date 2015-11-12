@@ -22,12 +22,24 @@ body {
     background-repeat:no-repeat;
     display: inline-block;
     float: left;
+    position: relative;
+
 }
 
-.posterBg img {
-    position: relative;
+.posterBg .userImage {
+    position: absolute;
     top:16%;
     left:25%;
+    opacity:0.1;
+}
+
+.posterBg .vignette{
+    position: absolute;
+    top: 16%;
+    left: 25%;
+    width: 100px;
+    height: 100px;
+    z-index: 21;
 }
 
 

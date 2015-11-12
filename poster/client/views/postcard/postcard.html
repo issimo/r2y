@@ -4,8 +4,9 @@
     <div class="posterBg col-md-4" style="">
             <button class="delete">&times;</button>
         {{#if isDesktop}}
-          <img src="http://localhost:3000{{this.url store='images'}}" height="100" width="100"/>
-          <a href='#' onclick='burnImage(); return false;'>Burn image</a>
+
+          <img src="{{this.url store='images'}}" height="100" width="100" class="userImage"/>
+          <div class="vignette"><img src="pix/vignette.png" height="100" width="100"> </div>
         {{/if}}
         {{#if isPhone}}
           <img src="{{this.url store='images'}}" height="100" width="100" class="rotate90"/>

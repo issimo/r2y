@@ -11,8 +11,6 @@ body {
     font-family:Montserrat;
 }
 
-
-
 .posterBg {
     margin: 20px 20px;
     height: 280px;
@@ -30,7 +28,7 @@ body {
     position: absolute;
     top:16%;
     left:25%;
-    opacity:0.1;
+    opacity:0.4;
 }
 
 .posterBg .vignette{

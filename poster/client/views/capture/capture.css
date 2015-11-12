@@ -1,6 +1,15 @@
-.cptCnt{height:90%;width:90%;margin:auto;padding:25px;max-width:525px;max-height:800px;min-height:800px;background:url(pix/pos1.jpg) no-repeat center;}
-.retake,.cancel{width:44px;margin:25px auto;}
-.face{background:url(pix/face.png) no-repeat center;height:260px;}
+.cptCnt{height:90%;width:90%;margin:auto;padding:25px;max-width:525px;max-height:800px;min-height:;background:url(pix/pos1.jpg) no-repeat center;}
+.retake,.cptCnt .delete{width:44px;margin:25px auto;cursor:pointer;}
+.back{width:70px;cursor:pointer;}
+.face{background:url(pix/face.png) no-repeat center;height:260px;margin:auto;text-align:center;}
 .myFileInput{display:none !important;}
-#fakeTap{font-weight:bold;color:#000;font-size:2vw;text-align:center;position:relative;top:100px;cursor:pointer;}
-.ftr{margin:70% auto;width:}.ftr row{text-align:center;}
+#fakeTap{font-weight:bold;color:#000;font-size:2vw;position:relative;top:100px;cursor:pointer;}
+.ftr{margin:70% auto;}
+.ftr .col-md-3{text-align:center;}
+.ftr img{width:40%;cursor:ponter;}
+.fb{width:19% !important;}
+.uName{background-color:#929497;border:none;color:#fff;text-align:center;height:33px;width:50%;position:relative;top:180px;}
+
+
+/*Placeholder Hack Tings*/
+::-webkit-input-placeholder{color: white;}:-moz-placeholder{color:white;}::-moz-placeholder{color:white;}:-ms-input-placeholder{color:white;}

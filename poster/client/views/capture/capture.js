@@ -1,11 +1,4 @@
 Template.capture.events({
-    'click #fakeTap' : function(event, template) {
-        event.preventDefault();
-        $('.myFileInput').trigger('click');   
-    }
-});
-
-Template.capture.events({
     'change .myFileInput' : function(event, template) {
         //var image = event.target.files;   
         FS.Utility.eachFile(event, function(file) {
@@ -15,11 +8,16 @@ Template.capture.events({
             });
         });
     },
-
     'click .delete': function() {
     	Images.remove(this._id);
+    },
+    'click #fakeTap' : function(event, template) {
+        event.preventDefault();
+        $('.myFileInput').trigger('click');   
+    },
+    'click .back' : function(){
+        Router.go('/');
     }
-
 });
 
 Template.capture.helpers({

@@ -1,5 +1,6 @@
 /* Is it me you're looking for...? */
-
+@font-face{font-family:Brandon;src:url(fonts/Brandon_reg.otf);font-weight:400;}
+@font-face{font-family:Brandon;src:url(fonts/Brandon_bld.otf);font-weight:800;}
 body {
     max-width:90%;
     margin: 0 auto;
@@ -8,7 +9,7 @@ body {
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
-    font-family:Montserrat;
+    font-family:Brandon;
 }
 
 .posterBg {
@@ -21,6 +22,7 @@ body {
     display: inline-block;
     float: left;
     position: relative;
+    box-shadow: 4px 4px 21px rgba(0,0,37,0.2);
 
 }
 

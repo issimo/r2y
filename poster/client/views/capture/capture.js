@@ -8,9 +8,6 @@ Template.capture.events({
             });
         });
     },
-    'click .delete': function() {
-    	Images.remove(this._id);
-    },
     'click #fakeTap' : function(event, template) {
         event.preventDefault();
         $('.myFileInput').trigger('click');   

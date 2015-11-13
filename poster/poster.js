@@ -10,7 +10,7 @@ if (Meteor.isServer) {
 }
 
 Router.configure({
-    layoutTemplate: 'main'
+    layoutTemplate: 'main'    
 });
 Router.route('/',{name:'home',template:'home',layoutTemplate: 'main'});
 Router.route('/capture',{layoutTemplate:'capture'});

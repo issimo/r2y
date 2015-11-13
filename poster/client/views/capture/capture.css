@@ -3,7 +3,7 @@
 .back{width:70px;cursor:pointer;}
 .face{background:url(pix/face.png) no-repeat center;height:260px;margin:auto;text-align:center;}
 .myFileInput{display:none !important;}
-#fakeTap{font-weight:bold;color:#000;font-size:2vw;position:relative;top:100px;cursor:pointer;}
+#fakeTap{font-weight:bold;color:#000;font-size:25px;position:relative;top:100px;cursor:pointer;}
 .ftr{margin:70% auto;}
 .ftr .col-md-3{text-align:center;}
 .ftr img{width:40%;cursor:ponter;}

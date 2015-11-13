@@ -29,6 +29,7 @@ cfs:tempstore@0.1.5
 cfs:upload-http@0.0.20
 cfs:worker@0.1.4
 check@1.1.0
+datariot:ganalytics@0.2.1
 ddp@1.2.2
 ddp-client@1.2.1
 ddp-common@1.2.2
@@ -71,7 +72,6 @@ mongo-livedata@1.0.9
 mystor:device-detection@0.2.0
 npm-mongo@1.4.39_1
 observe-sequence@1.0.7
-okgrow:router-autoscroll@0.1.1
 ordered-dict@1.0.4
 promise@0.5.1
 raix:eventemitter@0.1.3

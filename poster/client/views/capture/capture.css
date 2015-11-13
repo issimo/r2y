@@ -8,8 +8,9 @@
 .ftr .col-md-3{text-align:center;}
 .ftr img{width:40%;cursor:ponter;}
 .fb{width:19% !important;}
-.uName{background-color:#929497;border:none;color:#fff;text-align:center;height:33px;width:50%;position:relative;top:180px;}
+.uName{background-color:transparent;border:none;color:#fff;text-align:center;height:33px;width:50%;position:relative;top:180px;}
 
 
 /*Placeholder Hack Tings*/
 ::-webkit-input-placeholder{color: white;}:-moz-placeholder{color:white;}::-moz-placeholder{color:white;}:-ms-input-placeholder{color:white;}
+:focus{outline-color:#bebebe}

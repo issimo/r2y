@@ -18,4 +18,5 @@ Router.route('/capture',{layoutTemplate:'capture'});
 Router.route('/nav');
 Router.route('/postcard');
 Router.route('/footer');
-Router.route('/confirm');
+Router.route('/confirm',{layoutTemplate:'confirm'});
+Router.route('/share',{layoutTemplate:'share'});

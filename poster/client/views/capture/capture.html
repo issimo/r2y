@@ -1,28 +1,15 @@
 <template name="capture">
-    <div class="cptCnt container-fluid">
-        <div class="row">
-            <div class="col-md-4"><img class="delete img-responsive" src="pix/delete.png"></div>
-            <div class="col-md-4" style="text-align:center;bottom:12px;"><img class="back img-responsive" src="pix/back.png"></div>
-            <div class="col-md-4" style="text-align:right;"><img class="retake img-responsive" src="pix/retake.png"></div>
-        </div>
+    <div class="cptCnt">
+            <img class="back img-responsive" src="pix/back.png">
 
     <div class="row face">
         <p id="fakeTap">TAP TO CAPTURE</p>
         <form class="uploadForm">
             <input type="file" name="pic" class="myFileInput" accept="image/*" capture="camera">
-            <input type="text" name="uName" class="uName" placeholder="ENTER YOUR NAME HERE">
         </form>
 
         </div>
-        <div class="ftr container-fluid">
-            <div class="row">
-                <div class="col-md-3"><img class="img-responsive" src="pix/dwnld.png"></div>
-                <div class="col-md-3"><img class="img-responsive" src="pix/twtr.png"></div>
-                <div class="col-md-3"><img class="img-responsive fb" src="pix/fbook.png"></div>
-                <div class="col-md-3"><img class="img-responsive" src="pix/insta.png"></div>
-                
-            </div>       
-        </div>
+   
 </div>
    <script>
     $('.retake').on('click',function(){

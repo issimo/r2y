@@ -3,11 +3,11 @@
             <button class="deletePoster">&times;</button>
         {{#if isDesktop}}
 
-          <img src="{{this.url store='images'}}" height="100" width="100" class="userImage"/>
+          <img src="{{this.imageUrl}}" height="100" width="100" class="userImage"/>
           <div class="vignette"><img src="pix/vignette2.png" height="100" width="100"> </div>
         {{/if}}
         {{#if isPhone}}
-          <img src="{{this.url store='imageStore'}}" height="100" width="100" class="rotate90"/>
+          <img src="{{this.imageUrl}}" height="100" width="100" class="rotate90"/>
         {{/if}}
     </div>
 

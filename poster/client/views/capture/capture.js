@@ -11,6 +11,8 @@ Template.capture.events({
         }
         else {
             console.log("Success");
+            Session.set('publicId',img.public_id)
+            Session.set('url',img.url)
             console.log(img.public_id);
             console.log(img.url);
             Posters.insert({
@@ -21,7 +23,8 @@ Template.capture.events({
             console.log("Uploaded to DB");
         }
       });
-        Router.go('/confirm');
+=======
+      Router.go('confirm');
     },
     'click #fakeTap' : function(event, template) {
         event.preventDefault();

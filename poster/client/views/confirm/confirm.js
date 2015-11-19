@@ -1,3 +1,10 @@
+Template.confirm.rendered = function() {
+    var url = String(Session.get('url'));
+    url = url.replace(/"/g, '');
+    setTimeout(console.log("New url"),5000);
+    console.log(url);
+}
+
 Template.confirm.events({
   
     'click #posDel' : function(){
@@ -32,5 +39,11 @@ Template.confirm.events({
             setTimeout(function(){ Router.go('/capture');}, 1000);
             
         });
+    }
+});
+
+Template.confirm.helpers({
+    posters: function() {
+        return Posters.find();
     }
 });

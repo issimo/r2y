@@ -11,18 +11,5 @@
         </div>
    
 </div>
-   <script>
-    $('.retake').on('click',function(){
-        html2canvas($('.cptCnt'), {
-            onrendered: function(canvas) {
-                canvas.setAttribute("id", "canvas");
-                document.body.appendChild(canvas);
-            }
-        });//this all works, the canvas appears as expected
-
-        //var myCanvas = $(document).find('#canvas');
-        //myCanvas.css("margin-left", "50px");
-        //var myImg = myCanvas.get(0).toDataURL();
-        });
-    </script>
+   
 </template>

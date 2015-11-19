@@ -17,5 +17,5 @@
 
 
 /*Placeholder Hack Tings*/
-::-webkit-input-placeholder{color: white;}:-moz-placeholder{color:white;}::-moz-placeholder{color:white;}:-ms-input-placeholder{color:white;}
+::-webkit-input-placeholder{color:#bebebe;}:-moz-placeholder{color:#bebebe;}::-moz-placeholder{color:#bebebe;}:-ms-input-placeholder{color:#bebebe;}
 :focus{outline-color:#bebebe}

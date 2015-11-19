@@ -1,8 +1,8 @@
 <template name="confirm">
-    <div class="cptCnt">
-            <img class="delete img-responsive" src="pix/delete.png">
-            <img class="back img-responsive" src="pix/back.png">
-            <img class="retake img-responsive" src="pix/retake.png">
+    <div class="cptCnt conf">
+            <img class="delete img-responsive" src="pix/delete.png" data-toggle="modal" data-target="#delMod">
+            <img class="accept img-responsive" src="pix/back.png" data-toggle="modal" data-target="#accMod">
+            <img class="retake img-responsive" src="pix/retake.png" data-toggle="modal" data-target="#reMod">
 
     <div class="row face">
         <p id="fakeTap">TAP TO CAPTURE</p>
@@ -13,4 +13,82 @@
         </div>
         
 </div>
+    
+<!-- Modal -->
+<div id="delMod" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Delete Poster?</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to delete your poster?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+    
+<!-- Modal -->
+<div id="reMod" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Retake Picture?</h4>
+      </div>
+      <div class="modal-body">
+        <p>Are you sure you want to retake your picture?</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+    
+<!-- Modal -->
+<div id="accMod" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">All Done!</h4>
+      </div>
+      <div class="modal-body">
+        <p>Poster Confirmed!</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+    
+    <script>
+    //$('.retake').on('click',function(){
+      //  html2canvas($('.cptCnt'), {
+        //    onrendered: function(canvas) {
+          //      canvas.setAttribute("id", "canvas");
+            //    document.body.appendChild(canvas);
+            //}
+    //    });//this all works, the canvas appears as expected
+
+        //var myCanvas = $(document).find('#canvas');
+        //myCanvas.css("margin-left", "50px");
+        //var myImg = myCanvas.get(0).toDataURL();
+    //    });
+    </script>
 </template>

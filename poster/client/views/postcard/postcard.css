@@ -1,9 +1,10 @@
 .userImage {
-	width: 200px;
+	max-width: 200px;
     transform: scale(0.9);
     position: relative;
-    left: 10px;
     z-index: 1;
+    height:150px;
+    top:25px;
 }
 
 .vignettePoster {
@@ -12,3 +13,4 @@
     top:-176px;
 }
 .deletePoster{z-index:3;position:relative;}
+.posterBg{height:350px;}

@@ -1,4 +1,4 @@
-.cptCnt{height:600px;width:90%;margin:10px auto 0;max-width:365px;min-height:450px;;background:url(pix/r2yPosterS.png) no-repeat center;background-size:100%;position:relative;}
+.cptCnt{height:600px;width:90%;margin:10px auto 0;max-width:365px;min-height:450px;;background:url(pix/r2yPosterS.png) no-repeat center;background-size:cover;position:relative;}
 @media screen and (max-width: 500px){.cptCnt{height:600px;}}
 .retake,.cptCnt .delete,.back{cursor:pointer;position:absolute;}
 .delete{width:30px;left:2%;margin-top:21px;}

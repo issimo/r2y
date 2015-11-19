@@ -2,7 +2,6 @@
 	width: 200px;
     transform: scale(0.9);
     position: relative;
-    top: 176px;
     left: 10px;
     z-index: 1;
 }
@@ -10,4 +9,6 @@
 .vignettePoster {
 	z-index: 2;
     position: relative;
+    top:-176px;
 }
+.deletePoster{z-index:3;position:relative;}

@@ -4,19 +4,16 @@
         <hr>
         <div><a id="mPos" href="{{pathFor route='capture'}}">MY POSTER</a></div>
     </div>
-    <script type="text/javascript">
-    
-
-    </script>
+    <div style="text-align:center;margin:4% auto;">
+    <button class="btn btn-default btn-raised" id="newPost"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>CREATE YOUR OWN</button>
+    </div>
 <div class="posters">
         {{#each posters}}
         {{>postcard}}
         {{/each}}
 
 </div>
-    <div style="text-align:center;margin:10% auto;">
-    <button class="btn btn-default btn-raised" id="newPost"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>CREATE YOUR OWN</button>
-    </div>
+    
     <script>$(function(){$('.posters').slimScroll({height:'600px'});});</script>
     
     

@@ -1,15 +1,11 @@
 <template name="confirm">
     <div class="cptCnt conf">
             <img class="delete img-responsive" src="pix/delete.png" data-toggle="modal" data-target="#delMod">
-            <img class="accept img-responsive" src="pix/back.png" data-toggle="modal" data-target="#accMod">
+            <img class="accept img-responsive" src="pix/check.png" data-toggle="modal" data-target="#accMod">
             <img class="retake img-responsive" src="pix/retake.png" data-toggle="modal" data-target="#reMod">
 
-    <div class="row face">
-        <p id="fakeTap">TAP TO CAPTURE</p>
-        <form class="uploadForm">
-            <input type="file" name="pic" class="myFileInput" accept="image/*" capture="camera">
-            <input type="text" name="uName" class="uName" placeholder="ENTER YOUR NAME HERE">
-        </form>
+    <div class="row urFace">
+            <input type="text" name="uName" class="uName" placeholder="ENTER YOUR NAME HERE" autofocus>
         </div>
         
 </div>
@@ -21,14 +17,14 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Delete Poster?</h4>
       </div>
       <div class="modal-body">
         <p>Are you sure you want to delete your poster?</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-default" id="posDel">Delete</button>
       </div>
     </div>
 
@@ -42,14 +38,14 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">Retake Picture?</h4>
       </div>
       <div class="modal-body">
         <p>Are you sure you want to retake your picture?</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+          <button type="button" class="btn btn-default" id="posRe">Retake</button>
       </div>
     </div>
 
@@ -63,32 +59,36 @@
     <!-- Modal content-->
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
         <h4 class="modal-title">All Done!</h4>
       </div>
       <div class="modal-body">
-        <p>Poster Confirmed!</p>
+        <p>Poster added to the Gallery! Share it on the next page!</p>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
 
   </div>
 </div>
     
-    <script>
-    //$('.retake').on('click',function(){
-      //  html2canvas($('.cptCnt'), {
-        //    onrendered: function(canvas) {
-          //      canvas.setAttribute("id", "canvas");
-            //    document.body.appendChild(canvas);
-            //}
-    //    });//this all works, the canvas appears as expected
+<!-- Modal -->
+<div id="naMod" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
-        //var myCanvas = $(document).find('#canvas');
-        //myCanvas.css("margin-left", "50px");
-        //var myImg = myCanvas.get(0).toDataURL();
-    //    });
-    </script>
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Wait o!</h4>
+      </div>
+      <div class="modal-body">
+        <p>Abeg enter your name. Or abi you no wan shine?</p>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Ok o!</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
 </template>

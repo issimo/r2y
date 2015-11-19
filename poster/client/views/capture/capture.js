@@ -21,6 +21,7 @@ Template.capture.events({
             console.log("Uploaded to DB");
         }
       });
+        Router.go('/confirm');
     },
     'click #fakeTap' : function(event, template) {
         event.preventDefault();

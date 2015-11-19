@@ -1,1 +1,3 @@
-.accept{width:45px;left:45%;margin-top:10px;cursor:pointer;position:absolute;}
+.accept{width:45px;left:45%;margin-top:12px;cursor:pointer;position:absolute;}
+.uName{background-color:transparent;border:none;color:#fff;text-align:center;height:33px;width:50%;position:absolute;top:70%;right:25%;text-transform:uppercase;}
+.urFace{height:260px;margin:auto;text-align:center;background-size:100%;position:relative;top:70px;}

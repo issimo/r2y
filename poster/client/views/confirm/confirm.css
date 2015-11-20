@@ -1,3 +1,13 @@
+.conf{background:none;}
 .accept{width:45px;left:45%;margin-top:12px;cursor:pointer;position:absolute;}
-.uName{background-color:transparent;border:none;color:#fff;text-align:center;height:33px;width:50%;position:absolute;top:70%;right:25%;text-transform:uppercase;}
-.urFace{height:260px;margin:auto;text-align:center;background-size:100%;position:relative;top:70px;}
+.conf .delete,.retake,.accept{z-index:3}
+.uName{background-color:transparent;border:none;color:#fff;text-align:center;height:33px;width:50%;position:absolute;top:45%;right:25%;text-transform:uppercase;font-size:13px;z-index:2;}
+.urPos{position:relative;z-index:2;bottom:243px;}
+.urFace {
+    transform: scale(0.9);
+    position: relative;
+    z-index:1;
+    top:75px;
+     -webkit-filter: contrast(200%) brightness(150%) opacity(44%);
+}
+.posIm{max-height:516px;}

@@ -6,6 +6,7 @@
 .retake{width:30px;right:2%;margin-top:21px;}
 
 .face{background:url(pix/face.png) no-repeat center;height:260px;margin:auto;text-align:center;background-size:100%;position:relative;top:80px;}
+
 .myFileInput{display:none !important;}
 #fakeTap{font-weight:bold;color:#000;font-size:25px;position:relative;top:100px;cursor:pointer;}
 .ftr{margin:70% auto 0;position:relative;}

@@ -1,6 +1,7 @@
 Template.confirm.rendered = function() {
     var url = Session.get('imgUrl');
     console.log(url.relLink);
+    alert("Poster being created. Please Wait...");
 }
 
 Template.confirm.helpers({

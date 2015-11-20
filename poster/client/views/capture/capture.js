@@ -1,10 +1,9 @@
 Template.capture.events({
     'change .myFileInput' : function(event,template) {
-        alert("1. In here");
 
          FS.Utility.eachFile(event, function(file) {
-            alert(file.name);
-            console.log(file.size);
+            alert("Uploading. Please Wait...");
+            console.log(file);
 
           Images.insert(file, function (err, fileObj) {
           if (err){
@@ -14,10 +13,11 @@ Template.capture.events({
              // handle success depending what you need to do
             var userId = Meteor.userId();
             var imagesURL = { "relLink": "/cfs/files/images/" + fileObj._id };
-            alert("3. Around here");
 
             Session.set('imgUrl',imagesURL);
-            alert(imagesURL.relLink);
+            alert("Image Ready. Click Continue");
+
+            //alert(imagesURL.relLink);
             //Meteor.users.update(userId, {$set: imagesURL});
           }
         });

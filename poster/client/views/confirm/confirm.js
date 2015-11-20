@@ -23,10 +23,14 @@ Template.confirm.events({
         if($('.uName').val()!==""){
             $(".delete,.accept,.retake").hide();
         html2canvas($('.posIm'), {
+             height:515,
+            width:365,
             onrendered: function(canvas) {
                 canvas.setAttribute("id", "canvas");
-                Canvas2Image.saveAsPNG(canvas, width, height)
-                
+                //canvas.setAttribute("height", 450);
+                //canvas.setAttribute("width", 365);
+                document.body.appendChild(canvas);
+                Canvas2Image.saveAsPNG(canvas)
             }
         });
         setTimeout(function(){ $('#accMod').modal('hide');}, 3000);

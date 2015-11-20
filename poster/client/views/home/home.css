@@ -1,12 +1,11 @@
-.galCap{text-align:center;display:flex;}
-.galCap div{font-size:2.7vw;margin:0 5%;}
+.galCap{text-align:center;display:flex;height:100px;}
+.galCap div{font-size:2.1em;}
 .galCap div:first-child{color:#fff;}
-.galCap hr{background-color:#fff;color:#fff;-webkit-transform:rotate(90deg);width:30px;height:2px;position:relative;top:8px;}
+.galCap hr{background-color:#fff;color:#fff;-webkit-transform:rotate(90deg);width:30px;height:2px;position:relative;}
 .galCap a{text-decoration:none;color:#939598;}
 .posters{}
-#newPost{background-color:#828486;border-radius:0;color:#fff;width:80%;max-width:400px;height:40px;border:none;box-shadow: 4px 4px 21px rgba(0,0,37,0.2);}
+#newPost{background-color:#828486;border-radius:0;color:#fff;height:40px;border:none;box-shadow: 4px 4px 21px rgba(0,0,37,0.2);}
 #newPost span{margin-right:5px;}
-
 
 
 

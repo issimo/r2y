@@ -1,6 +1,5 @@
 Template.confirm.rendered = function() {
     var url = Session.get('imgUrl');
-    Session.set();
     console.log(url.relLink);
 }
 
@@ -8,11 +7,6 @@ Template.confirm.helpers({
     link: function() { 
     var url = Session.get('imgUrl');
     return url.relLink;
-    },
-    visible: function() {
-    var vis = 'yas';
-    Session.set('visible',vis);
-    return vis;
     }
 });
 

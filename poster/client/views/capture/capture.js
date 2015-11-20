@@ -5,6 +5,7 @@ Template.capture.events({
           Images.insert(file, function (err, fileObj) {
           if (err){
              // handle error
+             console.log("Error"+err);
           } else {
              // handle success depending what you need to do
             var userId = Meteor.userId();
@@ -12,11 +13,12 @@ Template.capture.events({
               "relLink": "/cfs/files/images/" + fileObj._id
             };
             Session.set('imgUrl',imagesURL)
-            console.log(imagesURL);
-            Meteor.users.update(userId, {$set: imagesURL});
-            setTimeout( function(){Router.go('confirm');},4000)
+            alert(imagesURL.relLink);
+            //Meteor.users.update(userId, {$set: imagesURL});
+
           }
         });
+          //Router.go('confirm');
      });
         /*
         var files;
@@ -34,6 +36,12 @@ Template.capture.events({
 
 
       //Router.go('confirm');
+    },
+    'click .captureContinue' :function(event,template){
+        event.preventDefault();
+        //alert("Clicked");
+        Router.go('confirm');
+
     },
     'click #fakeTap' : function(event, template) {
         event.preventDefault();

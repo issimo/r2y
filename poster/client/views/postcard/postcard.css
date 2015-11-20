@@ -5,6 +5,7 @@
     z-index: 1;
     height:150px;
     top:25px;
+    -webkit-filter: contrast(200%) brightness(200%) opacity(44%) saturate(200%);
 }
 
 .vignettePoster {
@@ -13,4 +14,4 @@
     top:-176px;
 }
 .deletePoster{z-index:3;position:relative;}
-.posterBg{height:350px;}
+#posterBg{max-height:420px;}

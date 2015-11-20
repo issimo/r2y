@@ -12,6 +12,5 @@ Template.postcard.events({
             }
         });
 		console.log(this.imageId);
-		
-});
+		});
 

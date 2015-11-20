@@ -25,7 +25,8 @@ Template.confirm.events({
         html2canvas($('.posIm'), {
             onrendered: function(canvas) {
                 canvas.setAttribute("id", "canvas");
-                document.body.appendChild(canvas);
+                Canvas2Image.saveAsPNG(canvas, width, height)
+                
             }
         });
         setTimeout(function(){ $('#accMod').modal('hide');}, 3000);

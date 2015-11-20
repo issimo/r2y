@@ -9,3 +9,7 @@ Template.home.helpers({
 		return Posters.find();
 	}
 });
+//Template.home.rendered = function() {
+//    $('.posters').append($('#svdImg'));
+//    $('#svdImg').show().addClass('img-responsive');
+//}

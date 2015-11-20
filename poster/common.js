@@ -41,3 +41,4 @@ Images.allow({
  }
 });
 }
+

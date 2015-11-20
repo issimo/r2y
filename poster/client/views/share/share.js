@@ -3,3 +3,7 @@ Template.share.events({
         Router.go('/');
     }
 });
+Template.share.rendered = function() {
+    $('#shrDiv').append($('#svdImg'));
+    $('#svdImg').show().addClass('img-responsive');
+}

@@ -27,12 +27,12 @@ Template.confirm.events({
             width:365,
             onrendered: function(canvas) {
                 canvas.setAttribute("id", "canvas");
-                //canvas.setAttribute("height", 450);
-                //canvas.setAttribute("width", 365);
-                document.body.appendChild(canvas);
-                Canvas2Image.saveAsPNG(canvas)
+                var svdImg = Canvas2Image.convertToPNG(canvas);
+                document.body.appendChild(svdImg);$(svdImg).attr('id','svdImg').hide();
+      
             }
         });
+
         setTimeout(function(){ $('#accMod').modal('hide');}, 3000);
         $('#accMod').on('hidden.bs.modal', function (e) {
             setTimeout(function(){ Router.go('/share');}, 1000);

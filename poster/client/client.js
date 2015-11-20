@@ -4,6 +4,8 @@ $.cloudinary.config({
 
 Meteor.subscribe("posters");
 
+Meteor.subscribe("images");
+
 var IR_Filters = {
     // make sure to scroll to the top of the page on a new route
     // Use: global

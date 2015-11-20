@@ -4,6 +4,11 @@ Cloudinary.config({
 	api_secret: 'SyGDrsgwHaFTvCpcRNBb_ta8Zo8'
 });
 
+
+Meteor.publish("images", function() {
+	return Images.find();
+})
+
 Meteor.publish("posters", function () {
     return Posters.find();
   });

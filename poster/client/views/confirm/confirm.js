@@ -1,9 +1,14 @@
 Template.confirm.rendered = function() {
-    var url = String(Session.get('url'));
-    url = url.replace(/"/g, '');
-    setTimeout(console.log("New url"),5000);
-    console.log(url);
+    var url = Session.get('imgUrl');
+    console.log(url.relLink);
 }
+
+Template.confirm.helpers({
+    link: function() { 
+    var url = Session.get('imgUrl');
+    return url.relLink;
+    }
+});
 
 Template.confirm.events({
   

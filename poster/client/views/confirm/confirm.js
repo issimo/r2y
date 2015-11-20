@@ -43,10 +43,3 @@ Template.confirm.events({
     }
 });
 
-Template.confirm.helpers({
-    posters: function() {
-        //return Posters.find();
-        //return this.url;
-        console.log(this.url);
-    }
-});

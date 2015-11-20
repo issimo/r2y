@@ -1,6 +1,3 @@
-Posters = new Mongo.Collection("posters");
-
-/*
 imageStore = new FS.Store.GridFS("images", {
     //Put in optional parameters
 });
@@ -8,4 +5,5 @@ imageStore = new FS.Store.GridFS("images", {
 Images = new FS.Collection("images" , {
     stores: [imageStore]
 });
-*/
+
+

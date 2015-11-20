@@ -1,9 +1,3 @@
-$.cloudinary.config({
-    cloud_name:"sargent"
-});
-
-Meteor.subscribe("posters");
-
 var IR_Filters = {
     // make sure to scroll to the top of the page on a new route
     // Use: global

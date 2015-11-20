@@ -15,3 +15,6 @@ Template.postcard.events({
 		}
 });
 
+		Images.remove(this._id);
+	}
+});

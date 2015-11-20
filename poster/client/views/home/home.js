@@ -5,7 +5,7 @@ Template.home.events({
 });
 
 Template.home.helpers({
-	images: function() {
-		return Images.find();
+	posters: function() {
+		return Posters.find();
 	}
 });

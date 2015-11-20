@@ -16,7 +16,8 @@ Template.confirm.events({
     },
     'click .accept' : function(){
         if($('.uName').val()!==""){
-        html2canvas($('.cptCnt'), {
+            $(".delete,.accept,.retake").hide();
+        html2canvas($('.posIm'), {
             onrendered: function(canvas) {
                 canvas.setAttribute("id", "canvas");
                 document.body.appendChild(canvas);
@@ -44,6 +45,8 @@ Template.confirm.events({
 
 Template.confirm.helpers({
     posters: function() {
-        return Posters.find();
+        //return Posters.find();
+        //return this.url;
+        console.log(this.url);
     }
 });

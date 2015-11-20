@@ -1,14 +1,11 @@
 .userImage {
-	width: 200px;
+	max-width: 200px;
     transform: scale(0.9);
     position: relative;
-    left: 10px;
     z-index: 1;
-
     height:150px;
     top:25px;
     -webkit-filter: contrast(200%) brightness(200%) opacity(44%) saturate(200%);
-
 }
 
 .vignettePoster {
@@ -16,6 +13,5 @@
     position: relative;
     top:-176px;
 }
-
 .deletePoster{z-index:3;position:relative;}
 #posterBg{max-height:420px;}

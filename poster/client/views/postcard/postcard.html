@@ -1,15 +1,8 @@
 <template name="postcard">
     <div class="col-md-4" id="posterBg">
             <button class="deletePoster">&times;</button>
-        {{#if isDesktop}}
-
-
-          <img src="{{this.url store='images'}}" height="100" width="100" class="userImage"/>
-          <div class="vignette"><img src="pix/vignette2.png" height="100" width="100"> </div>
-        {{/if}}
-        {{#if isPhone}}
-          <img src="{{this.url store='imageStore'}}" height="100" width="100" class="rotate90"/>
-        {{/if}}
+          <img src="{{this.imageUrl}}" class="userImage"/>
+          <div class="vignettePoster"><img src="pix/r2yPosterS.png" height="329" width="200"> </div>
     </div>
 
 </template>

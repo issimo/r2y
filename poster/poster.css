@@ -51,11 +51,12 @@ body {
 }
 
 .rotate90R {
-    -webkit-transform: rotate(90deg) scale(0.84);
-    -moz-transform: rotate(90deg) scale(0.84);
-    -o-transform: rotate(90deg) scale(0.84);
-    -ms-transform: rotate(90deg) scale(0.84);
-    transform: rotate(90deg) scale(0.84);
+    -webkit-transform:scale(0.55);
+    -moz-transform:scale(0.55);
+    -o-transform:scale(0.55);
+    -ms-transform:scale(0.55);
+    transform:scale(0.55);
+    top:-20px;
 }
 
 #xIssimo{background-color:#4d4d4d !important;opacity:0.8;display:none;}

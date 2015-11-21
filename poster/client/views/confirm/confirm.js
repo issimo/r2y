@@ -2,12 +2,24 @@ Template.confirm.rendered = function() {
     var url = Session.get('imgUrl');
     console.log(url.relLink);
     alert("Poster being created. Please Wait...");
+    var loadedImage = $('img#userImage');
+    console.log(loadedImage.src);
+    loadedImage.load( function() {
+        //Perform after image is loaded
+        alert("Poster is ready!");
+    } );
+
+
 }
 
 Template.confirm.helpers({
     link: function() { 
     var url = Session.get('imgUrl');
     return url.relLink;
+    },
+    imgLoaded: function() {
+        var ready = document.getElementById("userImage").complete;
+        return ready;
     }
 });
 

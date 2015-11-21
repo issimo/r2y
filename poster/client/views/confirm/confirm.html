@@ -6,10 +6,16 @@
 
     <div class="posIm">
 
+{{#if link}}
 
-        <img src="{{link}}" class="urFace img-responsive"/>
+        <p>{{imgLoaded}}</p>
+        <img src="{{link}}" class="urFace img-responsive" id="userImage"/>
+{{else}}
+        <p>Image Loading</p>
+        <p>{{imgLoaded}}</p>
 
-          <img src="pix/r2yPosterS.png" class="img-responsive urPos">
+{{/if}}
+        <img src="pix/r2yPosterS.png" class="img-responsive urPos">
         <input type="text" name="uName" class="uName" placeholder="ENTER YOUR NAME HERE" autofocus>
         </div>
         

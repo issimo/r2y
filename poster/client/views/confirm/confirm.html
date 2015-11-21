@@ -7,7 +7,11 @@
     <div class="posIm">
 
 {{#if link}}
+        {{#if isAndroid}}
+        <img src="{{link}}" class="rotate90 urFace img-responsive" id="userImage"/>
+        {{else}}
         <img src="{{link}}" class="urFace img-responsive" id="userImage"/>
+        {{/if}}
 {{else}}
         <h1>Image not Loaded. Please go back and Re-Capture</h1>
 {{/if}}

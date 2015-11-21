@@ -17,6 +17,10 @@ Template.confirm.rendered = function() {
 
 }
 
+Template.registerHelper('isAndroid',function(){
+  return navigator.userAgent.toLowerCase().indexOf("android") > -1;
+});
+
 Template.confirm.helpers({
     link: function() { 
     var url = Session.get('imgUrl');

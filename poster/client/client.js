@@ -1,7 +1,3 @@
-$.cloudinary.config({
-    cloud_name:"sargent"
-});
-
 Meteor.subscribe('pics');
 Pics = new Mongo.Collection("pics");
 window.Pics = Pics;
@@ -9,7 +5,6 @@ lastImage = false;
 
 Meteor.subscribe("posters");
 
-Meteor.subscribe("images");
 
 var IR_Filters = {
     // make sure to scroll to the top of the page on a new route

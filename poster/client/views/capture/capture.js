@@ -29,6 +29,7 @@ Template.capture.events({
               });
             }
           });
+         
         $('#capMod').modal('show');
 
     },
@@ -49,8 +50,3 @@ Template.capture.events({
     }
 });
 
-Template.capture.helpers ({
- pics: function() {
-    return Pics.find();
-  }
-});

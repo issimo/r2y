@@ -11,3 +11,10 @@
     opacity:0.7;
 }
 .posIm{max-height:516px;}
+@media (orientation: portrait) {
+    .uName{top:42%;}
+    .urPos{bottom:121px;}
+}
+@media screen and (max-width: 992px){
+    .ftr .col-md-3 {padding:0 5px;}    
+}

@@ -6,18 +6,22 @@
 
     <div class="posIm">
 
-{{#if link}}
         {{#if isAndroid}}
-        <img src="{{link}}" class="rotate90 urFace img-responsive" id="userImage"/>
+        <img src="{{link}}" class="rotate90 andFace urFace img-responsive" id="userImage"/>
         {{else}}
+
         {{#if isIOS}}
         <img src="{{link}}" class="rotate90R urFace img-responsive" id="userImage"/>
         {{else}}
+
         <img src="{{link}}" class="urFace img-responsive" id="userImage"/>
+
         {{/if}}
-{{else}}
-        <h1>Image not Loaded. Please go back and Re-Capture</h1>
-{{/if}}
+        {{/if}}
+
+
+
+
         <img src="pix/r2yPosterS.png" class="img-responsive urPos">
         <input type="text" name="uName" class="uName" placeholder="ENTER YOUR NAME HERE" autofocus>
         </div>

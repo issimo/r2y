@@ -43,11 +43,11 @@ body {
 
 
 .rotate90 {
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg) scale(0.8);
+    -moz-transform: rotate(-90deg) scale(0.8);
+    -o-transform: rotate(-90deg) scale(0.8);
+    -ms-transform: rotate(-90deg) scale(0.8);
+    transform: rotate(-90deg) scale(0.8);
 }
 
 .rotate90R {

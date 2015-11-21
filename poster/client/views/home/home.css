@@ -1,5 +1,5 @@
 .galCap{text-align:center;display:flex;height:100px;}
-.galCap div{font-size:2.1em;}
+.galCap div{font-size:2.1em;margin:0 auto;}
 .galCap div:first-child{color:#fff;}
 .galCap hr{background-color:#fff;color:#fff;-webkit-transform:rotate(90deg);width:30px;height:2px;position:relative;}
 .galCap a{text-decoration:none;color:#939598;}

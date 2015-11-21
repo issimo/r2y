@@ -14,7 +14,8 @@ Template.capture.events({
             var imagesURL = { "relLink": "/cfs/files/images/" + fileObj._id };
 
             Session.set('imgUrl',imagesURL);
-            alert("Image Ready. Click Continue");
+              console.log(imagesURL);
+            //alert("Image Ready. Click Continue");
 
             //alert(imagesURL.relLink);
             //Meteor.users.update(userId, {$set: imagesURL});
@@ -35,14 +36,7 @@ Template.capture.events({
           return console.log(res);
         });
         */
-
-
-      //Router.go('confirm');
-    },
-    'click .captureContinue' :function(event,template){
-        event.preventDefault();
-        //alert("Clicked");
-        Router.go('confirm');
+        $('#capMod').modal('show');
 
     },
     'click #fakeTap' : function(event, template) {
@@ -51,6 +45,14 @@ Template.capture.events({
     },
     'click .back' : function(){
         Router.go('/');
+    },
+    'click #capOk' : function(event, template) {
+        event.preventDefault();
+        $('body').removeClass('modal-open');
+        $('.modal-backdrop.fade.in').hide();
+        $("#xIssimo").fadeIn("fast");
+        function gerrarraheremehn(){Router.go('confirm');}
+        setTimeout(gerrarraheremehn,4000);
     }
 });
 

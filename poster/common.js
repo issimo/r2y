@@ -3,9 +3,25 @@ Posters = new Mongo.Collection("posters");
 
 imageStore = new FS.Store.GridFS("images", {
     //Put in optional parameters
+        beforeWrite:function(fileObj){
+      return {
+            extension: 'png',
+            type: 'image/png'
+          };
+    },
+    /*
+    transformWrite:function(fileObj, readStream, writeStream){
+      // Aqui la convierte en una imagen segun de 10x10 seguuuun
+      gm(readStream).resize(400).stream('PNG').pipe(writeStream); //resize depends your needs
+    }
+    */
 
-
-
+    transformWrite: resizeImageStream({
+        width: 400,
+        height:400,
+        format: 'image/jpeg',
+        quality: 10
+      })
 });
 
 Images = new FS.Collection("images" , {

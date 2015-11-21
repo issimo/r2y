@@ -90,6 +90,7 @@ mystor:device-detection@0.2.0
 nekojira:cloudinary-jquery-upload@0.1.0
 npm-bcrypt@0.7.8_2
 npm-mongo@1.4.39_1
+numtel:cfs-image-resize@0.0.1
 observe-sequence@1.0.7
 ordered-dict@1.0.4
 promise@0.5.1

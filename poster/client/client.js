@@ -2,6 +2,11 @@ $.cloudinary.config({
     cloud_name:"sargent"
 });
 
+Meteor.subscribe('pics');
+Pics = new Mongo.Collection("pics");
+window.Pics = Pics;
+lastImage = false;
+
 Meteor.subscribe("posters");
 
 Meteor.subscribe("images");

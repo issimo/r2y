@@ -20,7 +20,7 @@ Template.confirm.rendered = function() {
 Template.confirm.helpers({
     link: function() { 
     var url = Session.get('imgUrl');
-    return url.relLink;
+    return url;
     },
     imgLoaded: function() {
         var ready = document.getElementById("userImage").complete;

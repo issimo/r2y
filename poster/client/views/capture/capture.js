@@ -1,6 +1,38 @@
 Template.capture.events({
     'change .myFileInput' : function(event,template) {
 
+        var file, fileReader;
+
+file = event.target.files[0];
+
+fileReader = new FileReader();
+
+fileReader.onload = function(e) {
+  var lastImage;
+  Session.set('imgUrl',e.target.result);
+  //$('#userImages').append("<img src='" + e.target.result + "' onclick='$(this).remove()' />");
+  console.log(e.target.result);
+  return lastImage = e.target.result;
+};
+
+fileReader.readAsDataURL(file);
+
+({
+  'click #addFile': function() {
+    if (lastImage) {
+      return Pics.insert({
+        image: lastImage
+      });
+    }
+  },
+  'click .storedImage': function() {
+    return Pics.remove({
+      _id: this._id
+    });
+  }
+});
+
+        /*
          FS.Utility.eachFile(event, function(file) {
             //alert("Uploading. Please Wait...");
 
@@ -23,6 +55,11 @@ Template.capture.events({
         });
           //Router.go('confirm');
      });
+
+*/
+
+
+
         /*
         var files;
 
@@ -52,7 +89,12 @@ Template.capture.events({
         $('.modal-backdrop.fade.in').hide();
         $("#xIssimo").fadeIn("fast");
         function gerrarraheremehn(){Router.go('confirm');}
-        setTimeout(gerrarraheremehn,21000);
+        setTimeout(gerrarraheremehn,2100);
     }
 });
 
+Template.capture.helpers ({
+ pics: function() {
+    return Pics.find();
+  }
+});

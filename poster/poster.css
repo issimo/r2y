@@ -51,11 +51,11 @@ body {
 }
 
 .rotate90R {
-    -webkit-transform:matrix(0.55, 0, 0, 1, 0, 0);
-    -moz-transform:matrix(0.55, 0, 0, 1, 0, 0);
-    -o-transform:matrix(0.55, 0, 0, 1, 0, 0);
-    -ms-transform:matrix(0.55, 0, 0, 1, 0, 0);
-    transform:matrix(0.55, 0, 0, 1, 0, 0);
+    -webkit-transform:matrix(0.55, 0, 0, 0.55, 0, 0);
+    -moz-transform:matrix(0.55, 0, 0, 0.55, 0, 0);
+    -o-transform:matrix(0.55, 0, 0, 0.55, 0, 0);
+    -ms-transform:matrix(0.55, 0, 0, 0.55, 0, 0);
+    transform:matrix(0.55, 0, 0, 0.55, 0, 0);
     top:-20px;
 }
 

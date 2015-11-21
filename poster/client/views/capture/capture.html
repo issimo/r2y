@@ -1,7 +1,6 @@
 <template name="capture">
     <div class="cptCnt">
             <img class="back img-responsive" src="pix/back.png">
-            <button class="captureContinue">Continue</button>
     <div class="row face">
         <p id="fakeTap">TAP TO CAPTURE</p>
         <form class="uploadForm">
@@ -10,6 +9,25 @@
 
         </div>
    
+</div>
+    <!-- Modal -->
+<div id="capMod" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title">Getting that Pose!</h4>
+      </div>
+      <div class="modal-body">
+        <p>Your image has been uploaded. Click OK to continue!</p>
+      </div>
+      <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal" id="capOk">Ok o!</button>
+      </div>
+    </div>
+
+  </div>
 </div>
    
 </template>

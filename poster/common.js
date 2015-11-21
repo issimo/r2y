@@ -5,8 +5,8 @@ imageStore = new FS.Store.GridFS("images", {
     //Put in optional parameters
         beforeWrite:function(fileObj){
       return {
-            extension: 'png',
-            type: 'image/png'
+            extension: 'jpeg',
+            type: 'image/jpeg'
           };
     },
     /*
@@ -20,7 +20,7 @@ imageStore = new FS.Store.GridFS("images", {
         width: 400,
         height:400,
         format: 'image/jpeg',
-        quality: 10
+        quality: 21
       })
 });
 

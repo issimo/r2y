@@ -3,7 +3,6 @@ Template.capture.events({
 
          FS.Utility.eachFile(event, function(file) {
             alert("Uploading. Please Wait...");
-            console.log(file);
 
           Images.insert(file, function (err, fileObj) {
           if (err){

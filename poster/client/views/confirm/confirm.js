@@ -30,7 +30,6 @@ Template.confirm.events({
                 canvas.setAttribute("id", "canvas");
                 var svdImg = Canvas2Image.convertToPNG(canvas);
                 document.body.appendChild(svdImg);$(svdImg).attr('id','svdImg').hide();
-      
             }
         });
 

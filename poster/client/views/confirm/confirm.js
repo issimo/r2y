@@ -3,7 +3,6 @@ Template.confirm.rendered = function() {
     console.log(url.relLink);
     alert("Poster being created. Please Wait...");
     var loadedImage = $('img#userImage');
-    console.log(loadedImage.src);
     loadedImage.load( function() {
         //Perform after image is loaded
         alert("Poster is ready!");

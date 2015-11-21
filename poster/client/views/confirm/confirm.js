@@ -1,11 +1,15 @@
 Template.confirm.rendered = function() {
+   
     var url = Session.get('imgUrl');
     console.log(url.relLink);
-    alert("Poster being created. Please Wait...");
+    //alert("Poster being created. Please Wait...");
     var loadedImage = $('img#userImage');
     loadedImage.load( function() {
+        
         //Perform after image is loaded
         alert("Poster is ready!");
+        $("#xIssimo").fadeOut("slow");
+        
     } );
 
 

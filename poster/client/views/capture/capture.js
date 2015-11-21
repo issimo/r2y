@@ -2,7 +2,7 @@ Template.capture.events({
     'change .myFileInput' : function(event,template) {
 
          FS.Utility.eachFile(event, function(file) {
-            alert("Uploading. Please Wait...");
+            //alert("Uploading. Please Wait...");
 
           Images.insert(file, function (err, fileObj) {
           if (err){
@@ -37,7 +37,7 @@ Template.capture.events({
         */
 
 
-      //Router.go('confirm');
+      Router.go('confirm');
     },
     'click .captureContinue' :function(event,template){
         event.preventDefault();

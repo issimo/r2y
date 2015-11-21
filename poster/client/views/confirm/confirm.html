@@ -10,6 +10,9 @@
         {{#if isAndroid}}
         <img src="{{link}}" class="rotate90 urFace img-responsive" id="userImage"/>
         {{else}}
+        {{#if isIOS}}
+        <img src="{{link}}" class="rotate90R urFace img-responsive" id="userImage"/>
+        {{else}}
         <img src="{{link}}" class="urFace img-responsive" id="userImage"/>
         {{/if}}
 {{else}}

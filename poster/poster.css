@@ -50,6 +50,14 @@ body {
     transform: rotate(-90deg);
 }
 
+.rotate90R {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+    -ms-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
 #xIssimo{background-color:#4d4d4d !important;opacity:0.8;display:none;}
 
 /*Spinner*/

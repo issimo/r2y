@@ -8,13 +8,14 @@ Template.confirm.rendered = function() {
         if(typeof dUrl !=='undefined'){
         $("#xIssimo").fadeOut("slow");
     }   
-        //Perform after image is loaded
-        //alert("Poster is ready!");
         
     } );
 
 
 }
+Template.registerHelper('isIOS',function(){
+  return ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
+});
 
 Template.registerHelper('isAndroid',function(){
   return navigator.userAgent.toLowerCase().indexOf("android") > -1;

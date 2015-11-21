@@ -20,3 +20,4 @@ Router.route('/postcard');
 Router.route('/footer');
 Router.route('/confirm',{layoutTemplate:'confirm'});
 Router.route('/share',{layoutTemplate:'share'});
+Router.route('/admin');

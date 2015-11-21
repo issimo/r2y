@@ -9,7 +9,6 @@ Template.capture.events({
             var lastImage;
             Session.set('imgUrl',e.target.result);
             //$('#userImages').append("<img src='" + e.target.result + "' onclick='$(this).remove()' />");
-            console.log(e.target.result);
             return lastImage = e.target.result;
           };
 

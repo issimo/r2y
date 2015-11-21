@@ -1,13 +1,14 @@
 Template.confirm.rendered = function() { 
-    if(typeof imagesURL !==''){
-        $("#xIssimo").fadeOut("slow");
-    }
+    var dUrl = Session.get('imgUrl');
+    console.log(dUrl);
     //var url = Session.get('imgUrl');
     //console.log(url.relLink);
     //alert("Poster being created. Please Wait...");
     var loadedImage = $('img#userImage');
     loadedImage.load( function() {
-        
+        if(typeof dUrl !=='undefined'){
+        $("#xIssimo").fadeOut("slow");
+    }   
         //Perform after image is loaded
         //alert("Poster is ready!");
         

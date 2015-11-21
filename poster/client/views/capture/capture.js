@@ -2,7 +2,7 @@ Template.capture.events({
     'change .myFileInput' : function(event,template) {
 
          FS.Utility.eachFile(event, function(file) {
-            alert("Uploading. Please Wait...");
+            //alert("Uploading. Please Wait...");
 
           Images.insert(file, function (err, fileObj) {
           if (err){
@@ -52,7 +52,7 @@ Template.capture.events({
         $('.modal-backdrop.fade.in').hide();
         $("#xIssimo").fadeIn("fast");
         function gerrarraheremehn(){Router.go('confirm');}
-        setTimeout(gerrarraheremehn,4000);
+        setTimeout(gerrarraheremehn,21000);
     }
 });
 

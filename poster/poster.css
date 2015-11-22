@@ -51,11 +51,18 @@ body {
 }
 
 .rotate90R {
-    -webkit-transform:matrix(0.55, 0, 0, 0.55, 0, 0) rotate(90deg);
-    -moz-transform:matrix(0.55, 0, 0, 0.55, 0, 0) rotate(90deg);
-    -o-transform:matrix(0.55, 0, 0, 0.55, 0, 0) rotate(90deg);
-    -ms-transform:matrix(0.55, 0, 0, 0.55, 0, 0) rotate(90deg);
-    transform:matrix(0.55, 0, 0, 0.55, 0, 0) rotate(90deg);
+    -webkit-transform:rotate(90deg);
+    -moz-transform:rotate(90deg);
+    -o-transform:rotate(90deg);
+    -ms-transform:rotate(90deg);
+    transform:rotate(90deg);
+}
+.iosScale{ 
+    -webkit-transform:matrix(0.55, 0, 0, 0.55, 0, 0);
+    -moz-transform:matrix(0.55, 0, 0, 0.55, 0, 0);
+    -o-transform:matrix(0.55, 0, 0, 0.55, 0, 0);
+    -ms-transform:matrix(0.55, 0, 0, 0.55, 0, 0);
+    transform:matrix(0.55, 0, 0, 0.55, 0, 0);
     top:-25px;
 }
 /*This is an unnecessary comment because that's the way Andrew behaves*/

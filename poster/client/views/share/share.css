@@ -3,7 +3,7 @@
 .share .back{position:relative;top:160px;left:4px;}
 #svdImg{position:relative;z-index:-1;top:-88px;bottom:88px;height:515px;min-width:365px;}
 
-@media(max-width:992px){
+@media screen and (max-width:992px){
     #svdImg{
         top:-88px;
         bottom:88px;

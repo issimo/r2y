@@ -16,11 +16,16 @@
     .uName{top:42%;}
     
 }
-@media screen (max-width: 350px){
-    .urPos{bottom:166px;}
+@media screen and (max-width: 350px){
+    .urPos{bottom:230px;}
+    .uName{top:32%;}
+}
+@media screen and (min-width:400px) and (max-width:420px){
+    .urPos{bottom:121px;}
 }
 @media screen and (max-width: 992px){
-    .ftr .col-md-3 {padding:0 5px;}    
+    .ftr .col-md-3 {padding:0 4px;}
+    ::-webkit-input-placeholder{font-size:10px;}:-moz-placeholder{font-size:10px;}::-moz-placeholder{font-size:10px;}:-ms-input-placeholder{font-size:10px;}
 }
 
 /*Android*/

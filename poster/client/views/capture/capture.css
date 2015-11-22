@@ -15,8 +15,8 @@
 .ftr .row{text-align:center;}
 .ftr img{width:40%;cursor:pointer;margin:16% auto;}
 
-@media screen (max-width: 350px){
-    .face{top:70px;}
+@media screen and (max-width: 350px){
+    .face{top:25px !important;}
     uName{top:38%;}
 }
 

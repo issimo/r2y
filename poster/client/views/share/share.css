@@ -9,3 +9,5 @@
         bottom:88px;
     }
 }
+.share-buttons{display:inline-block;position:relative;bottom:20px;}
+.share-buttons a{margin:0 10px;}

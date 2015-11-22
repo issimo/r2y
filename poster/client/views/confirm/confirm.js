@@ -44,7 +44,8 @@ Template.confirm.events({
     'click .accept' : function(){
         if($('.uName').val()!==""){
             $(".delete,.accept,.retake").hide();
-        html2canvas($('.posIm'), {
+        //insert image css rotate stuff here
+            html2canvas($('.posIm'), {
              height:515,
             width:365,
             onrendered: function(canvas) {

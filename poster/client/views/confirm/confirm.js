@@ -10,14 +10,11 @@ Template.confirm.rendered = function() {
     }   
         
     } );
-    var flWt = screen.width;var flHt=screen.height;
+    var flWt = (window.innerWidth > 0) ? window.innerWidth : screen.width;;var flHt=screen.height;
             var myWt = flWt * 0.5;
-            var mChk = mobilecheck();
+            var mChk = mobilecheck();alert(mChk);
             console.log(mChk);console.log(myWt);
-    alert('The width is'+flWt+'and the Height is'+flHt);
             if(mChk==true){$('#userImage').width(myWt);}
-
-
 }
 Template.registerHelper('isIOS',function(){
   return ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );

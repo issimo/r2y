@@ -11,29 +11,30 @@ Template.share.events({
 }); 
 if (Meteor.isClient) {
   ShareIt.init({
-    siteOrder: ['facebook', 'twitter'],
+    siteOrder: ['twitter', 'facebook'],
     sites: {
         'facebook': {
-        'appId': null,
-        'version': 'v2.3',
         'buttonText': 'Share on Facebook'
       },
         'twitter': {
-        'appId': 'YOUR_APPLICATION_ID',
-        'version': 'v2.3',
         'buttonText': 'Share on Twitter'
       }
     },
     iconOnly: true,
-    applyColors: false
+    applyColors: true
   });
 } 
 
 Template.share.helpers({
   shareData: function() {
+      var dwnUrl = document.getElementById('svdImg').src;
+      console.log(dwnUrl);
     return {
-      title: 'My R2Y Poster',
-      author: '3WP'
-	  }
-	}
+        title: 'My R2Y Poster',
+        author: '3WP',
+        excerpt:'I just made my own R2Y poster at r2y.herokuapp.com!!',
+        url:'http://r2y.herokuapp.com',
+        thumbnail: dwnUrl
+  }
+}
 });

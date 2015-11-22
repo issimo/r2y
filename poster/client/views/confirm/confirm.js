@@ -11,7 +11,7 @@ Template.confirm.rendered = function() {
         
     } );
     var flWt = (window.innerWidth > 0) ? window.innerWidth : screen.width;;var flHt=screen.height;
-            var myWt = flWt * 0.5;var myWtAnd = flWt * 0.6;
+            var myWt = flWt * 0.5;var myWtAnd = flWt * 0.8;
             //var mChk = mobilecheck();alert(mChk);
             //console.log(mChk);console.log(myWt);
     var isMobile; if (window.matchMedia) {isMobile = window.matchMedia('(max-device-width: 960px)').matches;} else {isMobile = screen.width <= 960;}

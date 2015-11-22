@@ -21,7 +21,8 @@
     .uName{top:32%;}
 }
 @media screen and (min-width:400px) and (max-width:420px){
-    .urPos{bottom:121px;}
+    .urPos{bottom:121px !important;}
+    .face{top:60px;}
 }
 @media screen and (max-width: 992px){
     .ftr .col-md-3 {padding:0 4px;}

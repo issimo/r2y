@@ -44,7 +44,9 @@ Template.confirm.events({
     'click .accept' : function(){
         if($('.uName').val()!==""){
             $(".delete,.accept,.retake").hide();
-        //insert image css rotate stuff here
+            //insert iphone image css rotate stuff here
+            var ioS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+            if(ioS==true){$('#userImage').addClass('rotate90R');}
             html2canvas($('.posIm'), {
              height:515,
             width:365,

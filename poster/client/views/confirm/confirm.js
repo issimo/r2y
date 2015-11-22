@@ -11,7 +11,7 @@ Template.confirm.rendered = function() {
         
     } );
     var flWt = screen.width;var flHt=screen.height;
-            var myWt = flWt * 0.66;
+            var myWt = flWt * 0.5;
             var mChk = mobilecheck();
             console.log(mChk);console.log(myWt);
     alert('The width is'+flWt+'and the Height is'+flHt);

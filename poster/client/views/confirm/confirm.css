@@ -9,6 +9,7 @@
     z-index:1;
     top:75px;
     opacity:0.4;
+    margin:0 auto;
 }
 .posIm{max-height:516px;}
 @media (orientation: portrait) {

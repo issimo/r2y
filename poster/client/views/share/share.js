@@ -34,5 +34,6 @@ Template.share.helpers({
     return {
       title: 'My R2Y Poster',
       author: '3WP'
-  }
+	  }
+	}
 });

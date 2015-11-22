@@ -46,7 +46,10 @@ Template.confirm.events({
             $(".delete,.accept,.retake").hide();
             //insert iphone image css rotate stuff here
             var ioS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-            if(ioS==true){$('#userImage').removeClass('iosScale').addClass('rotate90R');}
+            var fullWidth = screen.width;
+            ver mywidth = fullWidth * 0.4;
+            if(check==true){alert('TRUE!!')$('#userImage').width(mywidth);}
+            if(ioS==true){$('#userImage').width().addClass('rotate90R');}
             html2canvas($('.posIm'), {
              height:515,
             width:365,

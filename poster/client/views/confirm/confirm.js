@@ -11,11 +11,13 @@ Template.confirm.rendered = function() {
         
     } );
     var flWt = (window.innerWidth > 0) ? window.innerWidth : screen.width;;var flHt=screen.height;
-            var myWt = flWt * 0.5;
+            var myWt = flWt * 0.5;var myWtAnd = flWt * 0.6;
             //var mChk = mobilecheck();alert(mChk);
             //console.log(mChk);console.log(myWt);
     var isMobile; if (window.matchMedia) {isMobile = window.matchMedia('(max-device-width: 960px)').matches;} else {isMobile = screen.width <= 960;}
             if(isMobile==true){$('#userImage').width(myWt);}
+    var isAndy; if (window.matchMedia) {isAndy = window.matchMedia('(max-device-width: 365px)').matches;} else {isAndy = screen.width <= 365;}
+            if(isAndy==true){$('#userImage').width(myWtAnd);}
         
 }
 Template.registerHelper('isIOS',function(){
@@ -55,6 +57,7 @@ Template.confirm.events({
             html2canvas($('.posIm'), {
              height:515,
             width:365,
+                logging:true,
             onrendered: function(canvas) {
                 canvas.setAttribute("id", "canvas");
                 var svdImg = Canvas2Image.convertToPNG(canvas);

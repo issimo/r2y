@@ -9,3 +9,30 @@ Template.share.events({
         Router.go('/');
     }
 }); 
+if (Meteor.isClient) {
+  ShareIt.init({
+    siteOrder: ['facebook', 'twitter'],
+    sites: {
+        'facebook': {
+        'appId': null,
+        'version': 'v2.3',
+        'buttonText': 'Share on Facebook'
+      },
+        'twitter': {
+        'appId': 'YOUR_APPLICATION_ID',
+        'version': 'v2.3',
+        'buttonText': 'Share on Twitter'
+      }
+    },
+    iconOnly: true,
+    applyColors: false
+  });
+} 
+
+Template.share.helpers({
+  shareData: function() {
+    return {
+      title: 'My R2Y Poster',
+      author: '3WP'
+  }
+});

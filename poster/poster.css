@@ -51,11 +51,11 @@ body {
 }
 
 .rotate90R {
-    -webkit-transform:rotate(90deg);
-    -moz-transform:rotate(90deg);
-    -o-transform:rotate(90deg);
-    -ms-transform:rotate(90deg);
-    transform:rotate(90deg);
+    -webkit-transform:matrix(0.55, 0, 0, 0.55, 0, 0) rotate(90deg);
+    -moz-transform:matrix(0.55, 0, 0, 0.55, 0, 0) rotate(90deg);
+    -o-transform:matrix(0.55, 0, 0, 0.55, 0, 0) rotate(90deg);
+    -ms-transform:matrix(0.55, 0, 0, 0.55, 0, 0) rotate(90deg);
+    transform:matrix(0.55, 0, 0, 0.55, 0, 0) rotate(90deg);
 }
 .iosScale{ 
     -webkit-transform:matrix(0.55, 0, 0, 0.55, 0, 0);

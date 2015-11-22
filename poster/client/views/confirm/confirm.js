@@ -10,6 +10,11 @@ Template.confirm.rendered = function() {
     }   
         
     } );
+    var fullWidth = screen.width;
+            var mywidth = fullWidth * 0.66;
+            var mChk = mobilecheck();
+            //console.log(mChk);console.log(mywidth);
+            if(mChk==true){alert('TRUE!!');$('#userImage').width(mywidth);}
 
 
 }
@@ -46,10 +51,7 @@ Template.confirm.events({
             $(".delete,.accept,.retake").hide();
             //insert iphone image css rotate stuff here
             var ioS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-            var fullWidth = screen.width;
-            ver mywidth = fullWidth * 0.4;
-            if(check==true){alert('TRUE!!')$('#userImage').width(mywidth);}
-            if(ioS==true){$('#userImage').width().addClass('rotate90R');}
+            if(ioS==true){$('#userImage').addClass('rotate90R');}
             html2canvas($('.posIm'), {
              height:515,
             width:365,

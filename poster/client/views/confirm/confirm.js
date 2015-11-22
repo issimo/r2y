@@ -10,6 +10,12 @@ Template.confirm.rendered = function() {
     }   
         
     } );
+    var flWt = screen.width;var flHt=screen.height;
+            var myWt = flWt * 0.66;
+            var mChk = mobilecheck();
+            console.log(mChk);console.log(myWt);
+    alert('The width is'+flWt+'and the Height is'+flHt);
+            if(mChk==true){$('#userImage').width(mywidth);}
 
 
 }
@@ -50,6 +56,7 @@ Template.confirm.events({
             var mywidth = fullWidth * 0.4;
             if(check==true){alert('TRUE!!');$('#userImage').width(mywidth);}
             if(ioS==true){$('#userImage').width().addClass('rotate90R');}
+            if(ioS==true){$('#userImage').addClass('rotate90R');}
             html2canvas($('.posIm'), {
              height:515,
             width:365,

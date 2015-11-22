@@ -15,8 +15,12 @@
 .ftr .row{text-align:center;}
 .ftr img{width:40%;cursor:pointer;margin:16% auto;}
 
+@media screen (max-width: 350px){
+    .face{top:70px;}
+    uName{top:38%;}
+}
 
 
 /*Placeholder Hack Tings*/
-::-webkit-input-placeholder{color:#bebebe;}:-moz-placeholder{color:#bebebe;}::-moz-placeholder{color:#bebebe;}:-ms-input-placeholder{color:#bebebe;}
+::-webkit-input-placeholder{color:#f1f1f1;}:-moz-placeholder{color:#bebebe;}::-moz-placeholder{color:#bebebe;}:-ms-input-placeholder{color:#bebebe;}
 :focus{outline-color:#bebebe}

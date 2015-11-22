@@ -55,7 +55,7 @@ Template.confirm.events({
             var fullWidth = screen.width;
             var mywidth = fullWidth * 0.4;
             if(check==true){alert('TRUE!!');$('#userImage').width(mywidth);}
-            if(ioS==true){$('#userImage').width().addClass('rotate90R');}
+            if(ioS==true){$('#userImage').addClass('rotate90R');}
             if(ioS==true){$('#userImage').addClass('rotate90R');}
             html2canvas($('.posIm'), {
              height:515,

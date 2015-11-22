@@ -15,6 +15,10 @@ Template.confirm.rendered = function() {
             var mChk = mobilecheck();alert(mChk);
             console.log(mChk);console.log(myWt);
             if(mChk==true){$('#userImage').width(myWt);}
+    
+    var isMobile; if (window.matchMedia) {isMobile = window.matchMedia('(max-device-width: 960px)').matches;} else {isMobile = screen.width <= 960;}
+    alert(isMobile);
+    
 }
 Template.registerHelper('isIOS',function(){
   return ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );

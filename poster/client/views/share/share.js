@@ -9,7 +9,3 @@ Template.share.events({
         Router.go('/');
     }
 }); 
-
-Template.registerHelper('isIOS',function(){
-  return ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
-});

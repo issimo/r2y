@@ -15,7 +15,7 @@ Template.confirm.rendered = function() {
             var mChk = mobilecheck();
             console.log(mChk);console.log(myWt);
     alert('The width is'+flWt+'and the Height is'+flHt);
-            if(mChk==true){$('#userImage').width(mywidth);}
+            if(mChk==true){$('#userImage').width(myWt);}
 
 
 }
@@ -52,10 +52,6 @@ Template.confirm.events({
             $(".delete,.accept,.retake").hide();
             //insert iphone image css rotate stuff here
             var ioS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-            var fullWidth = screen.width;
-            var mywidth = fullWidth * 0.4;
-            if(check==true){alert('TRUE!!');$('#userImage').width(mywidth);}
-            if(ioS==true){$('#userImage').addClass('rotate90R');}
             if(ioS==true){$('#userImage').addClass('rotate90R');}
             html2canvas($('.posIm'), {
              height:515,

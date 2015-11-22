@@ -10,11 +10,12 @@ Template.confirm.rendered = function() {
     }   
         
     } );
-    var fullWidth = screen.width;
-            var mywidth = fullWidth * 0.66;
+    var flWt = screen.width;var flHt=screen.height;
+            var myWt = flWt * 0.66;
             var mChk = mobilecheck();
-            //console.log(mChk);console.log(mywidth);
-            if(mChk==true){alert('TRUE!!');$('#userImage').width(mywidth);}
+            console.log(mChk);console.log(myWt);
+    alert('The width is'+flWt+'and the Height is'+flHt);
+            if(mChk==true){$('#userImage').width(mywidth);}
 
 
 }

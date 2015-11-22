@@ -12,13 +12,11 @@ Template.confirm.rendered = function() {
     } );
     var flWt = (window.innerWidth > 0) ? window.innerWidth : screen.width;;var flHt=screen.height;
             var myWt = flWt * 0.5;
-            var mChk = mobilecheck();alert(mChk);
-            console.log(mChk);console.log(myWt);
-            if(mChk==true){$('#userImage').width(myWt);}
-    
+            //var mChk = mobilecheck();alert(mChk);
+            //console.log(mChk);console.log(myWt);
     var isMobile; if (window.matchMedia) {isMobile = window.matchMedia('(max-device-width: 960px)').matches;} else {isMobile = screen.width <= 960;}
-    alert(isMobile);
-    
+            if(isMobile==true){$('#userImage').width(myWt);}
+        
 }
 Template.registerHelper('isIOS',function(){
   return ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );

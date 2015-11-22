@@ -6,6 +6,4 @@
 .posters{}
 #newPost{background-color:rgb(142,145,152);border-radius:0;color:#fff;height:40px;border:none;box-shadow: 4px 4px 21px rgba(0,0,37,0.2);}
 #newPost span{margin-right:5px;}
-
-
-
+.storedImage {width:42%;}

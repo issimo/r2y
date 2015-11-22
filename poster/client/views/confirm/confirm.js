@@ -53,7 +53,7 @@ Template.confirm.events({
             $(".delete,.accept,.retake").hide();
             //insert iphone image css rotate stuff here
             var ioS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-            if(ioS==true){$('#userImage').addClass('rotate90R');}
+            if(ioS==true){$('#xIssimo').show();$('#userImage').addClass('rotate90R');}
             html2canvas($('.posIm'), {
              height:515,
             width:365,
@@ -67,7 +67,7 @@ Template.confirm.events({
                 savePoster(svdImg.src);
             }
         });
-
+            $('#xIssimo').hide();
         setTimeout(function(){ $('#accMod').modal('hide');}, 3000);
         $('#accMod').on('hidden.bs.modal', function (e) {
             setTimeout(function(){ Router.go('/share');}, 1000);

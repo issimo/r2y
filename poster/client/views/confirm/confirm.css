@@ -1,7 +1,7 @@
 .conf{background:none;}
 .accept{width:40px !important;left:45%;margin-top:12px;cursor:pointer;position:absolute;}
 .conf .delete,.retake,.accept{z-index:3;width:25px;}
-.uName{background-color:transparent;border:none;color:#bbb;text-align:center;height:33px;width:50%;position:absolute;top:45%;right:25%;text-transform:uppercase;font-size:11px;z-index:2;font-weight:bold;}
+.uName{background-color:transparent;border:none;color:#f8f8f8;text-align:center;height:33px;width:50%;position:absolute;top:45%;right:25%;text-transform:uppercase;font-size:11px;z-index:2;font-weight:bold;}
 .urPos{position:absolute;z-index:2;bottom:88px;}
 .urFace {
     transform: scale(0.9);
@@ -25,6 +25,9 @@
     .uName{top:37%;}
     .face{top:44px;}
     .urFace{top:75px;}
+}
+@media screen and (min-width: 365px) and (max-width:395px){
+    .urPos{bottom:172px;}
 }
 @media screen and (min-width:400px) and (max-width:420px){
     .urPos{bottom:121px !important;}

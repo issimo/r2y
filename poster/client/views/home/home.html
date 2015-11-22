@@ -6,7 +6,14 @@
             <button class="btn btn-default btn-raised" id="newPost"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>CREATE</button>
         </div>
     </div>
-    
+    <script type="text/javascript">
+    $(function() {
+        console.log("drag");
+        $("storedImage").draggable();
+    });
+    </script>
+
+
 <div class="posters">
         {{#each pics}}
 			<div> <img class="storedImage" src={{image}} onclick='$(this).remove()'/></div>

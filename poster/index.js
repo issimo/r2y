@@ -13,6 +13,7 @@ mobilecheck = function() {
   return check;
 }
 
+
 dataURItoBlob = function(dataURI) {
   var binary = atob(dataURI.split(',')[1]);
   var array = [];
@@ -24,4 +25,15 @@ dataURItoBlob = function(dataURI) {
   }
   
   return new Blob([new Uint8Array(array)], {type: 'image/jpeg'});
+
+xIssimo = function(){
+    $('#xIssimo').show().addClass('fxPos');
+    beforeload = (new Date()).getTime();
+//    function pageloadingtime(){
+        afterload = (new Date()).getTime();
+        secondes = (afterload-beforeload);
+        console.log(secondes);
+        setTimeout(function(){$('#xIssimo').hide().removeClass('fxPos')},secondes);
+//}
+//this.onpageshow = pageloadingtime;
 }

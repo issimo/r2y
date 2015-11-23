@@ -1,7 +1,7 @@
 .share{background:none;}
 .soc{width:44% !important;}
 .share .back{position:relative;top:160px;left:4px;}
-#svdImg{position:relative;z-index:-1;top:-88px;bottom:88px;height:515px;min-width:365px;}
+#svdImg{position:relative;z-index:-1;bottom:375px;right:60%;transform:scale(0.5)}
 
 @media screen and (max-width:992px){
     #svdImg{
@@ -9,5 +9,5 @@
         bottom:88px;
     }
 }
-.share-buttons{display:inline-block;position:relative;bottom:20px;}
-.share-buttons a{margin:0 10px;}
+.share-buttons{display:inline-block;position:relative;}
+.share-buttons a{margin:7px 20px;width:40px;}

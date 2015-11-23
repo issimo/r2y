@@ -1,12 +1,13 @@
 .share{background:none;}
 .soc{width:44% !important;}
 .share .back{position:relative;top:160px;left:4px;}
-#svdImg{position:relative;z-index:-1;bottom:375px;right:60%;transform:scale(0.5)}
+#svdImg{position:relative;z-index:-1;bottom:175px;width:100%;height:100%;}
+
 
 @media screen and (max-width:992px){
     #svdImg{
         top:-88px;
-        bottom:88px;
+        bottom:90px;
     }
 }
 .share-buttons{display:inline-block;position:relative;}

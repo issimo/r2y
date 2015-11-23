@@ -13,7 +13,22 @@ Router.configure({
     layoutTemplate: 'main'    
 });
 
-Router.route('/',{name:'home',template:'home',layoutTemplate: 'main'});
+Router.route('/',{name:'home',template:'home',layoutTemplate: 'main',data:function(){
+beforeload = (new Date()).getTime();
+function pageloadingtime()
+{
+    afterload = (new Date()).getTime();
+    secondes = (afterload-beforeload)/1000;
+    console.log(secondes);
+    $('#xIssimo').show();
+    setTimeout(function(){$('#xIssimo').hide()},secondes);
+    
+}
+window.onload = pageloadingtime;
+    
+}
+                 });
+
 Router.route('/capture',{layoutTemplate:'capture'});
 Router.route('/nav');
 Router.route('/postcard');

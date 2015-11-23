@@ -11,6 +11,5 @@ Template.home.helpers({
 });
 
 //Template.home.rendered = function() {
-//    $('.posters').append($('#svdImg'));
-//    $('#svdImg').show().addClass('img-responsive');
+//    $('#xIsiimo').show();
 //}

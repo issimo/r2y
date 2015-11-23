@@ -5,7 +5,8 @@ Template.share.rendered = function() {
 
     $("#dwnld").attr('href',dwnUrl);
 
-      var dwnBlob = dataURItoBlob(dwnUrl);
+      //var dwnBlob = dataURItoBlob(dwnUrl);
+      dwnBlob = dwnUrl;
       var shrUrl;
 
       Cloudinary._upload_file(dwnBlob, {}, function(err, res) {
@@ -41,15 +42,13 @@ if (Meteor.isClient) {
   });
 } 
 
-Template.share.events({
-  'click .soc': function(event,template) {
-    event.preventDefault();
-    console.log("Food");
-  }
-});
+
 Template.share.helpers({
   shareData: function() {
       var dwnUrl = document.getElementById('svdImg').src;
+      var fileReader = new FileReader();
+      shareLink = fileReader.readAsDataURL(dwnUrl);
+      console.log(shareLink);
 
     return {
         title: 'My R2Y Poster from r2y.herokuapp.com #RoadToYesterdayPoster',

@@ -14,15 +14,13 @@ Router.configure({
 });
 
 Router.route('/',{name:'home',template:'home',layoutTemplate: 'main',data:function(){
-$('#xIssimo').show();
+    $('#xIssimo').show();
     beforeload = (new Date()).getTime();
-function pageloadingtime()
-{
-    afterload = (new Date()).getTime();
-    secondes = (afterload-beforeload)/1000;
-    console.log(secondes);
-    
-    setTimeout(function(){$('#xIssimo').hide()},secondes);
+    function pageloadingtime(){
+        afterload = (new Date()).getTime();
+        secondes = (afterload-beforeload);
+        console.log(secondes);
+        setTimeout(function(){$('#xIssimo').hide()},secondes);
     
 }
 window.onload = pageloadingtime;

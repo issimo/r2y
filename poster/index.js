@@ -24,6 +24,7 @@ dataURItoBlob = function(dataURI) {
   }
   
   return new Blob([new Uint8Array(array)], {type: 'image/jpeg'});
+}
 
 xIssimo = function(){
     $('#xIssimo').show().addClass('fxPos');

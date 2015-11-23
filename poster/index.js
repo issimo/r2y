@@ -5,7 +5,6 @@ savePoster = function(imgSrc) {
 	    });
 	}
 }
-
 mobilecheck = function() {
   var check = false;
   (function(a){

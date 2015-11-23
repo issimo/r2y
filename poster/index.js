@@ -28,11 +28,8 @@ dataURItoBlob = function(dataURI) {
 xIssimo = function(){
     $('#xIssimo').show().addClass('fxPos');
     beforeload = (new Date()).getTime();
-//    function pageloadingtime(){
         afterload = (new Date()).getTime();
         secondes = (afterload-beforeload);
         console.log(secondes);
         setTimeout(function(){$('#xIssimo').hide().removeClass('fxPos')},secondes);
-//}
-//this.onpageshow = pageloadingtime;
 }

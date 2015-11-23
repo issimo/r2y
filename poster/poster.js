@@ -14,13 +14,14 @@ Router.configure({
 });
 
 Router.route('/',{name:'home',template:'home',layoutTemplate: 'main',data:function(){
-beforeload = (new Date()).getTime();
+$('#xIssimo').show();
+    beforeload = (new Date()).getTime();
 function pageloadingtime()
 {
     afterload = (new Date()).getTime();
     secondes = (afterload-beforeload)/1000;
     console.log(secondes);
-    $('#xIssimo').show();
+    
     setTimeout(function(){$('#xIssimo').hide()},secondes);
     
 }

@@ -3,6 +3,14 @@ Template.capture.events({
 
           var file, fileReader;
           file = event.target.files[0];
+
+                  Cloudinary.upload(file, {
+          folder: "secret",
+          type: "private"
+        }, function(err, res) {
+          console.log("Upload Error: " + err);
+          return console.log(res);
+        });
           fileReader = new FileReader();
 
           fileReader.onload = function(e) {

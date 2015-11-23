@@ -65,6 +65,7 @@ body {
     transform:matrix(0.55, 0, 0, 0.55, 0, 0);
     top:-25px;
 }
+.fxPos{position:fixed !important;}
 /*This is an unnecessary comment because that's the way Andrew behaves*/
 /* SKRT */
 #xIssimo{background-color:#4d4d4d !important;opacity:0.8;display:none;}

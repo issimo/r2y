@@ -18,8 +18,9 @@ Template.confirm.rendered = function() {
             if(isMobile==true){$('#userImage').width(myWt);}
     var isAndy; if (window.matchMedia) {isAndy = window.matchMedia('(max-device-width: 365px)').matches;} else {isAndy = screen.width <= 365;}
             if(isAndy==true){$('#userImage').width(myWtAnd);}
-        
+
 }
+
 Template.registerHelper('isIOS',function(){
   return ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
 });
@@ -50,27 +51,16 @@ Template.confirm.events({
     },
     'click .accept' : function(){
         if($('.uName').val()!==""){
-            $(".delete,.accept,.retake").hide();
+            //$(".delete,.accept,.retake").hide();
             //insert iphone image css rotate stuff here
             var ioS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
             if(ioS==true){$('#xIssimo').show();$('#userImage').addClass('rotate90R');}
-            html2canvas($('.posIm'), {
-             height:515,
-            width:365,
-                logging:true,
-            onrendered: function(canvas) {
-                canvas.setAttribute("id", "canvas");
-                var svdImg = Canvas2Image.convertToPNG(canvas);
-                document.body.appendChild(svdImg);$(svdImg).attr('id','svdImg').hide();
-
-                console.log(svdImg.src);
-                savePoster(svdImg.src);
-            }
-        });
-            $('#xIssimo').hide();
+            $('.uName').hide();
+            drawHTML();
+            
         setTimeout(function(){ $('#accMod').modal('hide');}, 3000);
         $('#accMod').on('hidden.bs.modal', function (e) {
-            setTimeout(function(){ Router.go('/share');}, 1000);
+            setTimeout(function(){ Router.go('/share');}, 800);
             
         });
             }else{
@@ -82,7 +72,7 @@ Template.confirm.events({
     'click #posRe' : function(){
         $('#reMod').modal('hide');
         $('#reMod').on('hidden.bs.modal', function (e) {
-            setTimeout(function(){ Router.go('/capture');}, 1000);
+            setTimeout(function(){ Router.go('/capture');}, 800);
             
         });
     }

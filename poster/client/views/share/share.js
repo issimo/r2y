@@ -1,6 +1,6 @@
 Template.share.rendered = function() {
     $('#shrDiv').append($('#svdImg'));
-    $('#svdImg').show().addClass('img-responsive');
+    $('#svdImg').show();
     var dwnUrl = document.getElementById('svdImg').src;
     $("#dwnld").attr('href',dwnUrl);
 }

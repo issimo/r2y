@@ -56,11 +56,11 @@ Template.confirm.events({
             var ioS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
             if(ioS==true){$('#xIssimo').show();$('#userImage').addClass('rotate90R');}
             $('.uName').hide();
-            drawHTML();
+            //SVG CODE SHOULD GO HERE
             
         setTimeout(function(){ $('#accMod').modal('hide');}, 3000);
         $('#accMod').on('hidden.bs.modal', function (e) {
-            setTimeout(function(){ Router.go('/share');}, 800);
+            //setTimeout(function(){ Router.go('/share');}, 800);
             
         });
             }else{

@@ -1,4 +1,5 @@
 <template name="confirm">
+
     <div class="cptCnt conf">
             <img class="delete img-responsive" src="pix/delete.png" data-toggle="modal" data-target="#delMod">
             <img class="accept img-responsive" src="pix/check.png" data-toggle="modal" data-target="#accMod">
@@ -23,28 +24,37 @@
         <img src="pix/r2yPosterS.png" class="img-responsive urPos">
         <input type="text" id="uName" name="uName" class="uName" placeholder="ENTER YOUR NAME HERE" autofocus="autofocus">
         <span id="urName"></span>
-        <script>
-            
-        </script>
+
+        <div id="svgFinal"></div>
+        <div id="posterCapture"></div>
+        <div id="posterPng"></div>
+
         </div>
         
 </div>
-   <button id="tstBt">BUTTON!!</button>
+   <button id="capBtn">Capture</button>
+   <button id="saveBtn">Save</button>
+
     <canvas id="canvas" style="width:400px;height:565px;"></canvas>
     <script type="text/javascript">
         
-          //This code is to hide the input and displaya  span before screenshot is taken  
+        jQuery.fn.clnUp = function() {
+           textNodes = this.contents().filter(
+               function() { return (this.nodeType == 3 && !/\S/.test(this.nodeValue)); })
+               .remove();
+           return this;
+        }     
+          //This code is to hide the input and displays span before screenshot is taken  
         $('.uName').focusout(function(){
                 var urName =document.getElementById('uName').value;//
             $('#urName').html(urName).css('z-index',2);
             });
         
-        var uStyle = "<style>#urName,.uName{background-color:transparent;border:none;color:#f8f8f8;text-align:center;height:33px;width:50%;position:absolute;top:55%;right:23%;text-transform:uppercase;font-size:21px;z-index:2;font-weight:700;font-family:Brandon;}#urName{z-index:1}.urPos{position:absolute;z-index:2;bottom:0!important;right:0;top:0;left:0}.urFace{transform:scale(.9);position:relative;z-index:1;top:85px;left:25%;opacity:.4;margin:0 auto}</style>"
-            $('#posIm').prepend(uStyle).clnUp();
+        var uStyle = "<style>#urName,.uName{background-color:transparent;border:none;color:#f8f8f8;text-align:center;height:33px;width:50%;position:absolute;top:55%;right:23%;text-transform:uppercase;font-size:21px;z-index:2;font-weight:700;font-family:Brandon;}#urName{z-index:1}.urPos{position:absolute;z-index:2;bottom:0!important;right:0;top:0;left:0}.urFace{transform:scale(.9);position:relative;z-index:1;top:85px;left:0%;opacity:.6;margin:0 auto}</style>";
+          $('#posIm').prepend(uStyle).clnUp();
         var clnIm = document.getElementById('posIm').outerHTML.replace(/<\/?script\b.*?>/g, "");
-            console.log(clnIm);
-        $('#tstBt').on('click',function(){
-                    var svg = d3.select("body").append("svg")
+        $('#capBtn').on('click',function(){
+                    var svg = d3.select("#svgFinal").append("svg")
                     .attr("width", 400)
                     .attr("height", 565);
                 svg.append("foreignObject")
@@ -52,7 +62,23 @@
                     .attr("height", 565)
                   .append("xhtml:body")
                     .html(clnIm);
+                            console.log(svg);
                         });
+
+        d3.select("#save").on("click", function(){
+  var html = d3.select("svg")
+        .attr("version", 1.1)
+        .attr("xmlns", "http://www.w3.org/2000/svg")
+        .node().parentNode.innerHTML;
+
+  console.log(html);
+  var imgsrc = 'data:image/svg+xml;base64,'+ btoa(html);
+  var img = '<img src="'+imgsrc+'">'; 
+  d3.select("#posterCapture").html(img);
+    console.log(img);
+
+
+});
             </script>
     
 <!-- Modal -->

@@ -21,6 +21,19 @@ Template.confirm.rendered = function() {
 
 }
 
+Template.confirm.events ({
+    'click #saveBtn' : function(e,t){
+        e.preventDefault();
+
+        var html = d3.select("svg").attr("version", 1.1).attr("xmlns", "http://www.w3.org/2000/svg").node().parentNode.innerHTML;
+        console.log(html);
+          var imgsrc = 'data:image/svg+xml;base64,'+ btoa(html);
+          var img = '<img src="'+imgsrc+'">'; 
+          d3.select("#posterCapture").html(img);
+          console.log(img);
+    }
+})
+
 Template.registerHelper('isIOS',function(){
   return ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
 });

@@ -1,4 +1,8 @@
 Template.confirm.rendered = function() { 
+    $('.uName').hide();
+    $('#svgHome').show();
+    $('svg').hide();
+
     var dUrl = Session.get('imgUrl');
     //var url = Session.get('imgUrl');
     //console.log(url.relLink);
@@ -24,15 +28,49 @@ Template.confirm.rendered = function() {
 Template.confirm.events ({
     'click #saveBtn' : function(e,t){
         e.preventDefault();
+                var html = d3.select("svg")
+                .attr("version", 1.1)
+                .attr("xmlns", "http://www.w3.org/2000/svg")
+                .node().parentNode.innerHTML;
 
-        var html = d3.select("svg").attr("version", 1.1).attr("xmlns", "http://www.w3.org/2000/svg").node().parentNode.innerHTML;
-        console.log(html);
-          var imgsrc = 'data:image/svg+xml;base64,'+ btoa(html);
+                //console.log(html);
+                var imgsrc = 'data:image/svg+xml;base64,'+ btoa(html);
+                var img = '<img src="'+imgsrc+'">'; 
+                d3.select("#svgdataurl").html(img);
+
+
+                var canvas = document.querySelector("canvas2"),
+                context = canvas.getContext("2d");
+
+                var image = new Image;
+                image.src = imgsrc;
+
+                image.onload = function() {
+                    context.drawImage(image, 0, 0);
+
+                    var canvasdata = canvas.toDataURL("image/png");
+
+                    var pngimg = '<img src="'+canvasdata+'">'; 
+                    d3.select("#posterPng").html(pngimg);
+
+                    var a = document.createElement("a");
+                    a.download = "sample.png";
+                    a.href = canvasdata;
+                    a.click();
+                }
+
+    },
+    'click #cap' : function(e,t){
+        e.preventDefault();
+        var data = document.querySelector('svg').outerHTML;
+
+          console.log(data);
+          var imgsrc = 'data:image/svg+xml;base64,'+ btoa(data);
           var img = '<img src="'+imgsrc+'">'; 
-          d3.select("#posterCapture").html(img);
           console.log(img);
+          d3.select("#posterCapture").html(img);
     }
-})
+});
 
 Template.registerHelper('isIOS',function(){
   return ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
@@ -59,24 +97,36 @@ Template.confirm.events({
         $('#delMod').modal('hide');
         $('#delMod').on('hidden.bs.modal', function (e) {
             setTimeout(function(){ Router.go('/');}, 1000);
-            
+        $('svg').remove();
+        Session.set('setSvg',false);
         });
     },
     'click .accept' : function(){
-        if($('.uName').val()!==""){
-            //$(".delete,.accept,.retake").hide();
-            //insert iphone image css rotate stuff here
-            var ioS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-            if(ioS==true){$('#xIssimo').show();$('#userImage').addClass('rotate90R');}
-            $('.uName').hide();
-            //SVG CODE SHOULD GO HERE
+
+            //$('.uName').show();
+        if($('svg .uName').val()>2)
+            { 
+                $('#svgHome').hide();
+                $('svg').show();
+                //$(".delete,.accept,.retake").hide();
+                //insert iphone image css rotate stuff here
+                var ioS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+                if(ioS==true){$('#xIssimo').show();$('#userImage').addClass('rotate90R');}
+                //$('.uName').hide();
+                //SVG CODE SHOULD GO HERE
+
+                savePoster();
+                Session.set('setSvg',false);
+                //document.ge
             
-        setTimeout(function(){ $('#accMod').modal('hide');}, 3000);
+        setTimeout(function(){ $('#accMod').modal('hide');}, 5000);
         $('#accMod').on('hidden.bs.modal', function (e) {
-            //setTimeout(function(){ Router.go('/share');}, 800);
+            setTimeout(function(){ Router.go('/share');}, 1700);
             
         });
             }else{
+                $('#svgHome').hide();
+                $('svg').show();
                 $('#naMod').modal('show');
                 return false;
                 $('uName').focusin();
@@ -86,7 +136,9 @@ Template.confirm.events({
         $('#reMod').modal('hide');
         $('#reMod').on('hidden.bs.modal', function (e) {
             setTimeout(function(){ Router.go('/capture');}, 800);
-            
+        $('svg').remove();
+        Session.set('setSvg',false);
+
         });
     }
 });

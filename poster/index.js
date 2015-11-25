@@ -12,7 +12,6 @@ mobilecheck = function() {
   return check;
 }
 
-
 dataURItoBlob = function(dataURI) {
   var binary = atob(dataURI.split(',')[1]);
   var array = [];
@@ -33,4 +32,79 @@ xIssimo = function(){
         secondes = (afterload-beforeload);
         console.log(secondes);
         setTimeout(function(){$('#xIssimo').hide().removeClass('fxPos')},secondes);
+}
+
+svgToPng = function() {
+  var svg = document.querySelector("svg");
+  var svgData = new XMLSerializer().serializeToString( svg );
+  console.log(svgData);
+
+  var canvas = document.getElementById( "canvas" );
+   var svgSize = svg.getBoundingClientRect();
+        canvas.width = svgSize.width;
+        canvas.height = svgSize.height;
+  var ctx = canvas.getContext( "2d" );
+
+var DOMURL = self.URL || self.webkitURL || self;
+
+  var img = document.createElement( "img" );
+  img.setAttribute( "src", "data:image/svg+xml;base64," + btoa( svgData ) );
+
+  img.onload = function() {
+  var imgWidth=img.width;
+  var imgHeight=img.height;
+  canvas.width= imgWidth;
+  canvas.height=imgHeight;
+
+  ctx.drawImage(img,0,0,imgWidth,imgHeight);
+        //context.drawImage(img, 0, 0, 100, 100 * 565 / 400);
+        //ctx.drawImage(img, sourceX, sourceY, sourceWidth, sourceHeight, destX, destY, destWidth, destHeight);
+  var png = canvas.toDataURL("image/png");
+  DOMURL.revokeObjectURL(png);
+  document.getElementById('posterPng').innerHTML = '<img src="'+png+'"/>';
+
+
+  // Now is done
+  console.log( png );
+  return png;
+  }
+
+}
+
+isDataURL = function (s) {
+    return !!s.match(isDataURL.regex);
+}
+isDataURL.regex = /^\s*data:([a-z]+\/[a-z]+(;[a-z\-]+\=[a-z\-]+)?)?(;base64)?,[a-z0-9\!\$\&\'\,\(\)\*\+\,\;\=\-\.\_\~\:\@\/\?\%\s]*\s*$/i;
+
+
+savePoster = function() {
+   $('svg').hide();
+   var canvas = document.getElementById("canvas3");
+    var ctx = canvas.getContext("2d");
+    var image = new Image();
+    var image2 = document.getElementById("bgPoster");
+    //var image3 = document.getElementById("uName");
+    image.onload = function() {
+      var DOMURL = self.URL || self.webkitURL || self;
+    if (document.getElementById("userImage").src) {
+      var userImg = document.getElementById("userImage");
+      console.log(userImg);
+      console.log(userImg.width);
+    }
+      canvas.width = 365;
+      canvas.height = 515;
+    ctx.drawImage(image, 0,70,userImg.width,userImg.height);
+    ctx.drawImage(image2, 0, 0, 365, 515);
+    ctx.font = "33px";
+    ctx.fillText(document.getElementById('uName'), canvas.width/2, canvas.height/2 , canvas.width);
+    //ctx.drawImage(image3, 100, 200, 50, 30);
+     var png = canvas.toDataURL("image/png");
+    DOMURL.revokeObjectURL(png);
+    document.getElementById('posterPng').innerHTML = '<a href='+png+'download="myPoster"<img src="'+png+''+'"/></a>';
+    }
+    image.src = document.getElementById("userImage").src;
+    
+
+    return png;
+
 }

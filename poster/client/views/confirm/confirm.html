@@ -2,10 +2,10 @@
 
     <div class="cptCnt conf">
             <img class="delete img-responsive" src="pix/delete.png" data-toggle="modal" data-target="#delMod">
-            <img class="accept img-responsive" src="pix/check.png" data-toggle="modal" data-target="#accMod">
+            <img id="confirm" class="accept img-responsive" src="pix/check.png" data-toggle="modal" data-target="#accMod">
             <img class="retake img-responsive" src="pix/retake.png" data-toggle="modal" data-target="#reMod">
-
-    <div class="posIm" id="posIm">
+    <div id="svgHome">
+        <div class="posIm" id="posIm">
         
         {{#if isAndroid}}
         <img src="{{link}}" class="rotate90 urFace img-responsive" id="userImage"/>
@@ -21,22 +21,30 @@
         {{/if}}
         {{/if}}
 
-        <img src="pix/r2yPosterS.png" class="img-responsive urPos">
-        <input type="text" id="uName" name="uName" class="uName" placeholder="ENTER YOUR NAME HERE" autofocus="autofocus">
-        <span id="urName"></span>
-
-        <div id="svgFinal"></div>
-        <div id="posterCapture"></div>
-        <div id="posterPng"></div>
-
+        <img src="pix/r2yPosterS.png" id="bgPoster" class="img-responsive urPos">
+        <input type="text" id="uName" name="uName" class="uName" placeholder="ENTER NAME">
         </div>
+    </div>
         
 </div>
-   <button id="capBtn">Capture</button>
-   <button id="saveBtn">Save</button>
 
-    <canvas id="canvas" style="width:400px;height:565px;"></canvas>
+<canvas id="canvas3"></canvas>
+
+
+<div id="posterPng"> </div>
+
+<canvas id="canvas" style="width:400px;height:565px;"></canvas> <!-- 565px -->
+
+<script type="text/javascript" src="http://gabelerner.github.io/canvg/rgbcolor.js"></script> 
+<script type="text/javascript" src="http://gabelerner.github.io/canvg/StackBlur.js"></script>
+<script type="text/javascript" src="http://gabelerner.github.io/canvg/canvg.js"></script> 
     <script type="text/javascript">
+
+
+      window.onload = function(e) {
+
+       
+      }
         
         jQuery.fn.clnUp = function() {
            textNodes = this.contents().filter(
@@ -53,33 +61,34 @@
         var uStyle = "<style>#urName,.uName{background-color:transparent;border:none;color:#f8f8f8;text-align:center;height:33px;width:50%;position:absolute;top:55%;right:23%;text-transform:uppercase;font-size:21px;z-index:2;font-weight:700;font-family:Brandon;}#urName{z-index:1}.urPos{position:absolute;z-index:2;bottom:0!important;right:0;top:0;left:0}.urFace{transform:scale(.9);position:relative;z-index:1;top:85px;left:0%;opacity:.6;margin:0 auto}</style>";
           $('#posIm').prepend(uStyle).clnUp();
         var clnIm = document.getElementById('posIm').outerHTML.replace(/<\/?script\b.*?>/g, "");
-        $('#capBtn').on('click',function(){
-                    var svg = d3.select("#svgFinal").append("svg")
+
+        var canvas = document.getElementById("canvas");
+        var ctx = canvas.getContext('2d');
+
+        $('#confirm').on('click',function(){
+
+          
+          if (Session.get('setSvg') == true) {
+            //$('svg').show();
+            //Do not re print svg
+          } else {
+                    var svg = d3.select("body").append("svg")
                     .attr("width", 400)
-                    .attr("height", 565);
+                    .attr("height", 565)
                 svg.append("foreignObject")
                     .attr("width", 400)
                     .attr("height", 565)
-                  .append("xhtml:body")
                     .html(clnIm);
-                            console.log(svg);
-                        });
-
-        d3.select("#save").on("click", function(){
-  var html = d3.select("svg")
-        .attr("version", 1.1)
-        .attr("xmlns", "http://www.w3.org/2000/svg")
-        .node().parentNode.innerHTML;
-
-  console.log(html);
-  var imgsrc = 'data:image/svg+xml;base64,'+ btoa(html);
-  var img = '<img src="'+imgsrc+'">'; 
-  d3.select("#posterCapture").html(img);
-    console.log(img);
-
-
-});
+                    Session.set('setSvg',true);
+        //var imgPng = svgToPng();
+        //console.log(imgPng);
+            }
+        });
+            
             </script>
+
+            <div id="posterCapture"></div>
+
     
 <!-- Modal -->
 <div id="delMod" class="modal fade" role="dialog">

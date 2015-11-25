@@ -1,11 +1,16 @@
-#svgFinal{    
+#svg{    
     position: absolute;
-    left: 100%;
 }
 
 #posterCapture {
     position: absolute;
     left: 100%;
+}
+
+body svg {
+    color: red;
+    position: absolute;
+    top: 0;
 }
 
 .conf{background:none;}
@@ -22,7 +27,7 @@
     opacity:0.6;
     margin:0 auto;
 }
-.posIm{max-height:516px;}
+.posIm{height:565px;}
 @media (orientation: portrait) {
     .uName{top:42%;}
     
@@ -30,6 +35,8 @@
 @media screen and (max-width: 350px){
     .urPos{bottom:230px;}
     .uName{top:32%;}
+    .urFace{top:13%;}
+
 }
 @media screen and (min-width: 350px) and (max-width:365px){
     .urPos{bottom:182px;}
@@ -39,10 +46,15 @@
 }
 @media screen and (min-width: 365px) and (max-width:395px){
     .urPos{bottom:172px;}
+    .urFace{top:13%;}
+    .urFace{top:13%;}
+
 }
 @media screen and (min-width:400px) and (max-width:420px){
     .urPos{bottom:121px !important;}
     .face{top:60px;}
+    .urFace{top:13%;}
+
 }
 @media screen and (max-width: 992px){
     .ftr .col-md-3 {padding:0 4px;}

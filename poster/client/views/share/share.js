@@ -21,6 +21,11 @@ Template.share.rendered = function() {
       });
 
 }
+
+Template.share.destroyed = function() {
+    $('#posterPng').hide();
+}
+
 Template.share.events({
     'click .back':function(){
         Router.go('/');

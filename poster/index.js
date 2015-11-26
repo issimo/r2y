@@ -140,7 +140,7 @@ function drawImageRot(img,x,y,width,height,deg){
     var rotDeg = Session.get('currentDeg');
         
     var iOS = /iPad|iPhone|iPod/.test(navigator.platform) || /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-        if (iOS){var rotDeg = 90;}
+        if (iOS){var rotDeg = 90; console.log("ios");}
         
         
 

@@ -1,5 +1,6 @@
 Template.confirm.rendered = function() { 
     Session.set('currentDeg',0);
+    $('#userImage').removeClass('rotate90');
 
     //$('.uName').hide();
 
@@ -63,7 +64,7 @@ Template.confirm.events({
                 //$(".delete,.accept,.retake").hide();
                 //insert iphone image css rotate stuff here
                 var ioS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-                if(ioS==true){$('#xIssimo').show();$('#userImage').addClass('rotate90R');}
+                //if(ioS==true){$('#xIssimo').show();$('#userImage').addClass('rotate90R');}
 
                 var posterLink = savePoster();
                 renderPoster(posterLink); //Save href to the Database
@@ -119,7 +120,6 @@ Template.confirm.events({
         }
         if (currentDeg == 270) {
             $('#userImage').removeClass('rotate270');
-
             Session.set('currentDeg',0);
             console.log(currentDeg);
         }

@@ -138,6 +138,11 @@ function drawImageRot(img,x,y,width,height,deg){
     var destX = canvas.width / 8;
     var destY = canvas.height / 6;
     var rotDeg = Session.get('currentDeg');
+        
+    var iOS = /iPad|iPhone|iPod/.test(navigator.platform) || /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+        if (iOS){var rotDeg = 90;}
+        
+        
 
     //  Draw the users image on the canvas first
 //    ctx.drawImage(image, destX,destY,destWidth,destHeight,canvas.width/2,canvas.height/4,40,85);

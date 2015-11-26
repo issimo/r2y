@@ -6,15 +6,19 @@
             <button class="btn btn-default btn-raised" id="newPost"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>CREATE</button>
         </div>
     </div>
+   
+    <script>$(function(){$('.posters').slimScroll({height:'90%'});});</script>
 
 <div class="posters">
         {{#each pics}}
-			<img class="storedImage img-responsive" src={{image}} onclick='$(this).remove()'/>
+      <img class="storedImage img-responsive" src={{image}} onclick='$(this).remove()'/>
         {{/each}}
-
 </div>
-    
-    <script>$(function(){$('.posters').slimScroll({height:'600px'});});</script>
+
 
     
 </template>
+
+
+
+

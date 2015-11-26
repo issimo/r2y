@@ -10,6 +10,7 @@ lastImage = false;
 
 
 Meteor.subscribe("posters");
+Posters = new Mongo.Collection("posters");
 
 
 var IR_Filters = {

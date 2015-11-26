@@ -1,4 +1,9 @@
-.cptCnt{height:600px;width:90%;margin:10px auto 0;max-width:365px;min-height:450px;background:url(pix/r2yPosterS.png) no-repeat center 0;background-size:contain;position:relative;}
+.cptCnt{    background-size: contain;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;height:600px;width:90%;margin:10px auto 0;max-width:365px;min-height:450px;background:url(pix/r2yPosterS.png) no-repeat center 0;background-size:contain;position:absolute;}
 @media screen and (max-width: 500px){.cptCnt{height:600px;}}
 .retake,.cptCnt .delete,.back{cursor:pointer;position:absolute;}
 .delete{width:30px;left:2%;margin-top:21px;}
@@ -17,7 +22,7 @@
 
 @media screen and (max-width: 350px){
     .face{top:25px !important;}
-    uName{top:38%;}
+    .uName{top:38%;}
 }
 
 

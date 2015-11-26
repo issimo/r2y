@@ -1,7 +1,9 @@
 Template.confirm.rendered = function() { 
-    $('.uName').hide();
-    $('#svgHome').show();
-    $('svg').hide();
+    Session.set('currentDeg',0);
+
+    //$('.uName').hide();
+
+    //$('.uName').css('z-index',-22);
 
     var dUrl = Session.get('imgUrl');
     //var url = Session.get('imgUrl');
@@ -24,53 +26,6 @@ Template.confirm.rendered = function() {
             if(isAndy==true){$('#userImage').width(myWtAnd);}
 
 }
-
-Template.confirm.events ({
-    'click #saveBtn' : function(e,t){
-        e.preventDefault();
-                var html = d3.select("svg")
-                .attr("version", 1.1)
-                .attr("xmlns", "http://www.w3.org/2000/svg")
-                .node().parentNode.innerHTML;
-
-                //console.log(html);
-                var imgsrc = 'data:image/svg+xml;base64,'+ btoa(html);
-                var img = '<img src="'+imgsrc+'">'; 
-                d3.select("#svgdataurl").html(img);
-
-
-                var canvas = document.querySelector("canvas2"),
-                context = canvas.getContext("2d");
-
-                var image = new Image;
-                image.src = imgsrc;
-
-                image.onload = function() {
-                    context.drawImage(image, 0, 0);
-
-                    var canvasdata = canvas.toDataURL("image/png");
-
-                    var pngimg = '<img src="'+canvasdata+'">'; 
-                    d3.select("#posterPng").html(pngimg);
-
-                    var a = document.createElement("a");
-                    a.download = "sample.png";
-                    a.href = canvasdata;
-                    a.click();
-                }
-
-    },
-    'click #cap' : function(e,t){
-        e.preventDefault();
-        var data = document.querySelector('svg').outerHTML;
-
-          console.log(data);
-          var imgsrc = 'data:image/svg+xml;base64,'+ btoa(data);
-          var img = '<img src="'+imgsrc+'">'; 
-          console.log(img);
-          d3.select("#posterCapture").html(img);
-    }
-});
 
 Template.registerHelper('isIOS',function(){
   return ( navigator.userAgent.match(/(iPad|iPhone|iPod)/g) ? true : false );
@@ -102,44 +57,75 @@ Template.confirm.events({
         });
     },
     'click .accept' : function(){
-
             //$('.uName').show();
-        if($('svg .uName').val()>2)
+        if(true)
             { 
-                $('#svgHome').hide();
-                $('svg').show();
                 //$(".delete,.accept,.retake").hide();
                 //insert iphone image css rotate stuff here
                 var ioS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
                 if(ioS==true){$('#xIssimo').show();$('#userImage').addClass('rotate90R');}
-                //$('.uName').hide();
-                //SVG CODE SHOULD GO HERE
 
-                savePoster();
-                Session.set('setSvg',false);
-                //document.ge
-            
-        setTimeout(function(){ $('#accMod').modal('hide');}, 5000);
-        $('#accMod').on('hidden.bs.modal', function (e) {
-            setTimeout(function(){ Router.go('/share');}, 1700);
-            
-        });
-            }else{
-                $('#svgHome').hide();
+                var posterLink = savePoster();
+                renderPoster(posterLink); //Save href to the Database
+                console.log(posterLink);
+                $('svg').hide();
+
+                Session.set('lastImg',posterLink);
+                //Session.set('setSvg',false);
+                $('#accMod').on('hidden.bs.modal', function (e) {
+                setTimeout(function(){ Router.go('/share');}, 1700);
+                });
+
+            }
+            else{
                 $('svg').show();
+                $('#svgHome').hide();
                 $('#naMod').modal('show');
+                //$('uName').focusin();
                 return false;
-                $('uName').focusin();
             }
     },
     'click #posRe' : function(){
         $('#reMod').modal('hide');
         $('#reMod').on('hidden.bs.modal', function (e) {
-            setTimeout(function(){ Router.go('/capture');}, 800);
-        $('svg').remove();
+            setTimeout(function(){ Router.go('/capture');}, 1200);
+        $('#svgHome').show();
+        savePoster(Session.get('setSvg'));
+
         Session.set('setSvg',false);
 
         });
+    },
+    'click #rotatePoster' : function() {
+        currentDeg = Session.get('currentDeg');
+
+        if (currentDeg == 0) {
+            $('#userImage').addClass('rotate90');
+            Session.set('currentDeg',90);
+            console.log(currentDeg);
+        }
+        if (currentDeg == 90) {
+            $('#userImage').removeClass('rotate90');
+
+            $('#userImage').addClass('rotate180');
+            Session.set('currentDeg',180);
+            console.log(currentDeg);
+        }
+        if (currentDeg == 180) {
+            $('#userImage').removeClass('rotate180');
+            $('#userImage').addClass('rotate270');
+            Session.set('currentDeg',270);
+            console.log(currentDeg);
+        }
+        if (currentDeg == 270) {
+            $('#userImage').removeClass('rotate270');
+
+            Session.set('currentDeg',0);
+            console.log(currentDeg);
+        }
     }
+
+
+
 });
 

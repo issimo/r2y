@@ -4,7 +4,7 @@ Template.capture.events({
           var file, fileReader;
           file = event.target.files[0];
 
-                  Cloudinary.upload(file, {
+          Cloudinary.upload(file, {
           folder: "secret",
           type: "private"
         }, function(err, res) {
@@ -47,7 +47,8 @@ Template.capture.events({
         $('.myFileInput').trigger('click');   
     },
     'click .back' : function(){
-        Router.go('/');
+         event.preventDefault();
+          Router.go('/'); 
     },
     'click #capOk' : function(event, template) {
         event.preventDefault();

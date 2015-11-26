@@ -1,16 +1,24 @@
 <template name="share">
+    <div class="container-fluid mainBg">
+    {{> nav}}
     <div class="cptCnt share" id="shrDiv">
+            <img class="back img-responsive " src="pix/back.png">
+
+    <div class="col-md-3 soc" id="dlIcon">
+                <a id="dwnld" download="MyR2YPoster.jpg"><img class="img-responsive soc" src="pix/dwnld.png"></a></div>
         <div class="ftr" style="margin:auto;">
             <div class="row">
-                <div class="col-md-3"><a id="dwnld" download="MyR2YPoster.jpg"><img class="img-responsive soc" src="pix/dwnld.png"></a></div>
+                
                     {{>shareit shareData}}
-                <div class="col-md-3"><img class="img-responsive soc" src="pix/insta.png"></div>
+	                <div class="posIm" id="posIm">
+	                 <img src="{{poster}}" class="img-responsive" id="finalPoster"/>
 
+	                </div>
                 
             </div>
         
         </div>    
-        <img class="back img-responsive" src="pix/back.png">
         
+        </div>
 </div>
 </template>

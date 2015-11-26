@@ -1,11 +1,11 @@
 Template.share.rendered = function() {
-    $('#shrDiv').append($('#svdImg'));
-    $('#svdImg').show().addClass('scaled');
-    var dwnUrl = document.getElementById('svdImg').src;
+  var dwnUrl = Session.get('pngRes');
+  console.log(dataURItoBlob(dwnUrl));
 
-    $("#dwnld").attr('href',dwnUrl);
+imgBlob =  dataURItoBlob(dwnUrl);
+  $("#dwnld").attr('href',dwnUrl);
 
-      //var dwnBlob = dataURItoBlob(dwnUrl);
+      var dwnBlob = dataURItoBlob(dwnUrl);
       dwnBlob = dwnUrl;
       var shrUrl;
 
@@ -14,21 +14,25 @@ Template.share.rendered = function() {
           console.log(err);
           return;
         }
+
         shrUrl = res.secure_url;
+        savePoster(shrUrl);
         Session.set('shareUrl',shrUrl);
-        console.log(res);
-        console.log(shrUrl);
       });
 
 }
 
 Template.share.destroyed = function() {
-    $('#posterPng').hide();
 }
 
 Template.share.events({
-    'click .back':function(){
-        Router.go('/');
+    'click .back' : function(){
+         event.preventDefault();
+          Router.go('/'); 
+    },
+    
+    'click #dwnld' : function(){
+    return Session.get('shareUrl');
     }
 }); 
 if (Meteor.isClient) {
@@ -50,16 +54,19 @@ if (Meteor.isClient) {
 
 Template.share.helpers({
   shareData: function() {
-      var dwnUrl = document.getElementById('svdImg').src;
-      var fileReader = new FileReader();
-      shareLink = fileReader.readAsDataURL(dwnUrl);
-      console.log(shareLink);
+      shareLink = Session.get('shareUrl');
 
     return {
+
         title: 'My R2Y Poster from r2y.herokuapp.com #RoadToYesterdayPoster',
         author: '3WP',
         excerpt:'I just made my own R2Y poster at r2y.herokuapp.com!!',
-        url:Session.get('shareUrl'),
+        url: shareLink,
+
   }
-}
+},
+  poster: function() { 
+    var url = Session.get('pngRes');
+    return url;
+    },
 });

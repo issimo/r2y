@@ -22,3 +22,18 @@ Pics.allow({
  }
 });
 
+
+Posters = new Mongo.Collection('posters');
+Meteor.publish("posters", function() {
+	return Posters.find();
+});
+
+Posters.allow({
+ insert: function(){
+ return true;
+ },
+ remove: function(){
+ return true;
+ }
+});
+

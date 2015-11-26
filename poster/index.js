@@ -56,13 +56,15 @@ var DOMURL = self.URL || self.webkitURL || self;
   canvas.width= imgWidth;
   canvas.height=imgHeight;
 
-  ctx.drawImage(img,0,0,imgWidth,imgHeight);
         //context.drawImage(img, 0, 0, 100, 100 * 565 / 400);
         //ctx.drawImage(img, sourceX, sourceY, sourceWidth, sourceHeight, destX, destY, destWidth, destHeight);
   var png = canvas.toDataURL("image/png");
   DOMURL.revokeObjectURL(png);
   document.getElementById('posterPng').innerHTML = '<img src="'+png+'"/>';
 
+renderPoster = function() {
+
+}
 
   // Now is done
   console.log( png );
@@ -77,8 +79,26 @@ isDataURL = function (s) {
 isDataURL.regex = /^\s*data:([a-z]+\/[a-z]+(;[a-z\-]+\=[a-z\-]+)?)?(;base64)?,[a-z0-9\!\$\&\'\,\(\)\*\+\,\;\=\-\.\_\~\:\@\/\?\%\s]*\s*$/i;
 
 
-savePoster = function() {
-   $('svg').hide();
+renderPoster = function() {
+
+function drawImageRot(img,x,y,width,height,deg){
+
+    //Convert degrees to radian 
+    var rad = deg * Math.PI / 180;
+
+    //Set the origin to the center of the image
+    ctx.translate(x + width / 2, y + height / 2);
+
+    //Rotate the canvas around the origin
+    ctx.rotate(rad);
+
+    //draw the image    
+    ctx.drawImage(img,width / 2 * (-1),height / 2 * (-1),width,height);
+
+    //reset the canvas  
+    ctx.rotate(rad * ( -1 ) );
+    ctx.translate((x + width / 2) * (-1), (y + height / 2) * (-1));
+}
    var canvas = document.getElementById("canvas3");
     var ctx = canvas.getContext("2d");
     var image = new Image();
@@ -88,23 +108,57 @@ savePoster = function() {
       var DOMURL = self.URL || self.webkitURL || self;
     if (document.getElementById("userImage").src) {
       var userImg = document.getElementById("userImage");
-      console.log(userImg);
-      console.log(userImg.width);
     }
-      canvas.width = 365;
-      canvas.height = 515;
-    ctx.drawImage(image, 0,70,userImg.width,userImg.height);
+    canvas.width = 365;
+    canvas.height = 515;
+
+    var x = userImg.width;
+    var y = userImg.height;
+
+    if (y > x) {
+      var scale = y/x;
+    }
+    else {
+      var scale = x/y;
+    }
+    console.log(scale);
+    //var userName = $('svg #uName').val();
+
+    destWidth = canvas.width/1.1;
+
+    if (y > x) {
+    destHeight = destWidth * scale;
+    console.log("height");
+    }
+    else {
+    destHeight = destWidth / scale;
+        console.log("width");
+      }
+
+    var destX = canvas.width / 8;
+    var destY = canvas.height / 6;
+    var rotDeg = Session.get('currentDeg');
+
+    //  Draw the users image on the canvas first
+//    ctx.drawImage(image, destX,destY,destWidth,destHeight,canvas.width/2,canvas.height/4,40,85);
+    //  Draw the poster   
+    ctx.save();
+    ctx.globalAlpha = 0.7; 
+    // Draw user image and apply rotation if any
+    drawImageRot(image,10, destY, destWidth, destHeight,rotDeg);
+    ctx.restore();
+    
     ctx.drawImage(image2, 0, 0, 365, 515);
-    ctx.font = "33px";
-    ctx.fillText(document.getElementById('uName'), canvas.width/2, canvas.height/2 , canvas.width);
-    //ctx.drawImage(image3, 100, 200, 50, 30);
-     var png = canvas.toDataURL("image/png");
+
+    var png = canvas.toDataURL("image/png");
+    Session.set('latestMember');
     DOMURL.revokeObjectURL(png);
-    document.getElementById('posterPng').innerHTML = '<a href='+png+'download="myPoster"<img src="'+png+''+'"/></a>';
+    Session.set('pngRes',png);
     }
     image.src = document.getElementById("userImage").src;
-    
 
-    return png;
+
 
 }
+
+

@@ -1,10 +1,6 @@
 Template.confirm.rendered = function() { 
     Session.set('currentDeg',0);
-    $('#userImage').removeClass('rotate90');
-
-    //$('.uName').hide();
-
-    //$('.uName').css('z-index',-22);
+    //$('#userImage').removeClass('rotate90');
 
     var dUrl = Session.get('imgUrl');
     //var url = Session.get('imgUrl');
@@ -66,12 +62,28 @@ Template.confirm.events({
                 var ioS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
                 //if(ioS==true){$('#xIssimo').show();$('#userImage').addClass('rotate90R');}
 
-                var posterLink = savePoster();
-                renderPoster(posterLink); //Save href to the Database
-                console.log(posterLink);
+                renderPoster();
                 $('svg').hide();
 
-                Session.set('lastImg',posterLink);
+                var dwnUrl = Session.get('pngRes');
+                console.log(dwnUrl);
+                imgBlob =  dataURItoBlob(dwnUrl);
+
+                  var dwnBlob = dataURItoBlob(dwnUrl);
+                  var shrUrl;
+
+                      Cloudinary._upload_file(dwnBlob, {}, function(err, res) {
+                        if (err){
+                          console.log(err);
+                          return;
+                        }
+
+                        shrUrl = res.secure_url;
+                        savePoster(shrUrl);
+                        Session.set('shareUrl',shrUrl);
+                      });
+
+
                 //Session.set('setSvg',false);
                 $('#accMod').on('hidden.bs.modal', function (e) {
                 setTimeout(function(){ Router.go('/share');}, 1700);
@@ -99,7 +111,8 @@ Template.confirm.events({
     },
     'click #rotatePoster' : function() {
         currentDeg = Session.get('currentDeg');
-
+        $(".urFace").addClass("rotate90CCW");
+/*
         if (currentDeg == 0) {
             $('#userImage').addClass('rotate90');
             Session.set('currentDeg',90);
@@ -123,6 +136,7 @@ Template.confirm.events({
             Session.set('currentDeg',0);
             console.log(currentDeg);
         }
+        */
     }
 
 

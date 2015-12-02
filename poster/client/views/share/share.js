@@ -1,24 +1,7 @@
 Template.share.rendered = function() {
   var dwnUrl = Session.get('pngRes');
-  console.log(dataURItoBlob(dwnUrl));
-
-imgBlob =  dataURItoBlob(dwnUrl);
   $("#dwnld").attr('href',dwnUrl);
 
-      var dwnBlob = dataURItoBlob(dwnUrl);
-      dwnBlob = dwnUrl;
-      var shrUrl;
-
-      Cloudinary._upload_file(dwnBlob, {}, function(err, res) {
-        if (err){
-          console.log(err);
-          return;
-        }
-
-        shrUrl = res.secure_url;
-        savePoster(shrUrl);
-        Session.set('shareUrl',shrUrl);
-      });
 
 }
 
@@ -62,11 +45,13 @@ Template.share.helpers({
         author: '3WP',
         excerpt:'I just made my own R2Y poster at r2y.herokuapp.com!!',
         url: shareLink,
-
   }
 },
   poster: function() { 
     var url = Session.get('pngRes');
     return url;
     },
+    link: function() {
+      Session.get('pngRes');
+    }
 });

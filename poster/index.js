@@ -1,9 +1,7 @@
 savePoster = function(imgSrc) {
-	if (imgSrc) {
 	    return Pics.insert({
 	      image: imgSrc
 	    });
-	}
 }
 mobilecheck = function() {
   var check = false;
@@ -81,6 +79,52 @@ isDataURL.regex = /^\s*data:([a-z]+\/[a-z]+(;[a-z\-]+\=[a-z\-]+)?)?(;base64)?,[a
 
 renderPoster = function() {
 
+  /**
+ * Detecting vertical squash in loaded image.
+ * Fixes a bug which squash image vertically while drawing into canvas for some images.
+ * This is a bug in iOS6 devices. This function from https://github.com/stomita/ios-imagefile-megapixel
+ * 
+ */
+function detectVerticalSquash(img) {
+    var iw = img.naturalWidth, ih = img.naturalHeight;
+    var canvas = document.createElement('canvas');
+    canvas.width = 1;
+    canvas.height = ih;
+    var ctx = canvas.getContext('2d');
+    ctx.drawImage(img, 0, 0);
+    var data = ctx.getImageData(0, 0, 1, ih).data;
+    // search image edge pixel position in case it is squashed vertically.
+    var sy = 0;
+    var ey = ih;
+    var py = ih;
+    while (py > sy) {
+        var alpha = data[(py - 1) * 4 + 3];
+        if (alpha === 0) {
+            ey = py;
+        } else {
+            sy = py;
+        }
+        py = (ey + sy) >> 1;
+    }
+    var ratio = (py / ih);
+    alert(ratio);
+    return (ratio===0)?1:ratio;
+}
+
+/**
+ * A replacement for context.drawImage
+ * (args are for source and destination).
+ */
+function drawImageIOSFix(ctx, img, sx, sy, sw, sh, dx, dy, dw, dh) {
+    var vertSquashRatio = detectVerticalSquash(img);
+ // Works only if whole image is displayed:
+ // ctx.drawImage(img, sx, sy, sw, sh, dx, dy, dw, dh / vertSquashRatio);
+ // The following works correct also when only a part of the image is displayed:
+    ctx.drawImage(img, sx * vertSquashRatio, sy * vertSquashRatio, 
+                       sw * vertSquashRatio, sh * vertSquashRatio, 
+                       dx, dy, dw, dh );
+}
+
 function drawImageRot(img,x,y,width,height,deg){
 
     //Convert degrees to radian 
@@ -115,15 +159,21 @@ function drawImageRot(img,x,y,width,height,deg){
     var x = userImg.width;
     var y = userImg.height;
 
+    var imgRatio = userImg.width / userImg.height;
+    var canRatio = canvas.width / canvas.height;
+
+    var scaledWidth = userImg.width * (canvas.height / userImg.height);
+    var scaledHeight = userImg.height * (canvas.width / userImg.height);
+
     if (y > x) {
       var scale = y/x;
     }
     else {
       var scale = x/y;
+
     }
     console.log(scale);
     //var userName = $('svg #uName').val();
-
     destWidth = canvas.width/1.1;
 
     if (y > x) {
@@ -133,16 +183,16 @@ function drawImageRot(img,x,y,width,height,deg){
     else {
     destHeight = destWidth / scale;
         console.log("width");
-      }
+    }
 
     var destX = canvas.width / 8;
-    var destY = canvas.height / 6;
+    var destY = canvas.height / 21;
     var rotDeg = Session.get('currentDeg');
         
     var iOS = /iPad|iPhone|iPod/.test(navigator.platform) || /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
         if (iOS){var rotDeg = 90; console.log("ios");}
         
-        
+    var posterScale = 515/365;
 
     //  Draw the users image on the canvas first
 //    ctx.drawImage(image, destX,destY,destWidth,destHeight,canvas.width/2,canvas.height/4,40,85);
@@ -150,13 +200,27 @@ function drawImageRot(img,x,y,width,height,deg){
     ctx.save();
     ctx.globalAlpha = 0.7; 
     // Draw user image and apply rotation if any
-    drawImageRot(image,10, destY, destWidth, destHeight,rotDeg);
+    //drawImageRot(image,10, destY, destWidth, destHeight,rotDeg);
     ctx.restore();
-    
+    //drawImageIOSFix(ctx,image2,0, 0,365*posterScale,515*posterScale, 0, 0, 365, 515);
+
+  if (iOS) {
+      alert("iOS");
+      if (imgRatio > canRatio){
+        drawImageIOSFix(ctx,image,0, 0,x*2,y*2, destX, destY, canvas.width, scaledHeight);
+      }
+      else {
+        drawImageIOSFix(ctx,image,0, 0,x,y, destX, destY, scaledWidth, canvas.height);
+
+      }
+  }
+  else {
+    drawImageRot(image,10, destY, destWidth, destHeight,rotDeg);
+  }
     ctx.drawImage(image2, 0, 0, 365, 515);
 
+
     var png = canvas.toDataURL("image/png");
-    Session.set('latestMember');
     DOMURL.revokeObjectURL(png);
     Session.set('pngRes',png);
     }
@@ -165,5 +229,7 @@ function drawImageRot(img,x,y,width,height,deg){
 
 
 }
+
+
 
 

@@ -40,6 +40,7 @@ check@1.1.0
 coffeescript@1.0.11
 cosio55:autoform-cloudinary@0.0.2
 datariot:ganalytics@0.2.1
+dburles:mongo-collection-instances@0.3.4
 ddp@1.2.2
 ddp-client@1.2.1
 ddp-common@1.2.2
@@ -70,6 +71,7 @@ iron:middleware-stack@1.0.11
 iron:router@1.0.12
 iron:url@1.0.11
 jquery@1.11.4
+lai:collection-extensions@0.1.4
 launch-screen@1.0.4
 lepozepo:cloudinary@4.0.3
 less@2.5.1
@@ -79,6 +81,7 @@ localstorage@1.0.5
 logging@1.0.8
 meteor@1.1.10
 meteor-base@1.0.1
+meteortoys:toykit@2.2.1
 minifiers@1.1.7
 minimongo@1.0.10
 mobile-experience@1.0.1
@@ -87,6 +90,7 @@ momentjs:moment@2.8.4
 mongo@1.1.3
 mongo-id@1.0.1
 mongo-livedata@1.0.9
+msavin:mongol@1.6.2
 mystor:device-detection@0.2.0
 nekojira:cloudinary-jquery-upload@0.1.0
 npm-bcrypt@0.7.8_2

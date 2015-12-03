@@ -107,7 +107,6 @@ function detectVerticalSquash(img) {
         py = (ey + sy) >> 1;
     }
     var ratio = (py / ih);
-    alert(ratio);
     return (ratio===0)?1:ratio;
 }
 
@@ -201,22 +200,32 @@ function drawImageRot(img,x,y,width,height,deg){
     ctx.globalAlpha = 0.7; 
     // Draw user image and apply rotation if any
     //drawImageRot(image,10, destY, destWidth, destHeight,rotDeg);
-    ctx.restore();
     //drawImageIOSFix(ctx,image2,0, 0,365*posterScale,515*posterScale, 0, 0, 365, 515);
 
   if (iOS) {
+        var vertSquashRatio = detectVerticalSquash(image);
+        var finalHeight = destHeight/vertSquashRatio;
+        var finalWidth = finalHeight * imgRatio;
+        drawImageRot(image,18, 0, finalWidth-6, finalHeight-77,rotDeg);
+
+    /*
       alert("iOS");
       if (imgRatio > canRatio){
-        drawImageIOSFix(ctx,image,0, 0,x*2,y*2, destX, destY, canvas.width, scaledHeight);
+        destY = destY +21;
+        drawImageIOSFix(ctx,image,0, canvas.width,canvas.height, destX, destY, canvas.width/posterScale, scaledHeight/posterScale);
       }
       else {
-        drawImageIOSFix(ctx,image,0, 0,x,y, destX, destY, scaledWidth, canvas.height);
+        destY = destY +21;
+        drawImageIOSFix(ctx,image,0, 0,canvas.width,canvas.height, destX, destY, scaledWidth/posterScale, canvas.height/posterScale);
 
       }
+      */
   }
   else {
     drawImageRot(image,10, destY, destWidth, destHeight,rotDeg);
   }
+    ctx.restore();
+
     ctx.drawImage(image2, 0, 0, 365, 515);
 
 

@@ -111,8 +111,8 @@ Template.confirm.events({
     },
     'click #rotatePoster' : function() {
         currentDeg = Session.get('currentDeg');
-        $(".urFace").addClass("rotate90CCW");
-/*
+        //$(".urFace").addClass("rotate90CCW");
+
         if (currentDeg == 0) {
             $('#userImage').addClass('rotate90');
             Session.set('currentDeg',90);
@@ -136,7 +136,7 @@ Template.confirm.events({
             Session.set('currentDeg',0);
             console.log(currentDeg);
         }
-        */
+
     }
 
 

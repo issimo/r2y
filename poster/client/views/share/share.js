@@ -44,7 +44,9 @@ Template.share.helpers({
         title: 'My R2Y Poster from r2y.herokuapp.com #RoadToYesterdayPoster',
         author: '3WP',
         excerpt:'I just made my own R2Y poster at r2y.herokuapp.com!!',
-        url: shareLink
+        url: shareLink,
+        image:shareLink,
+        thumbnail:shareLink
   }
 },
   poster: function() { 

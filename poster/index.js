@@ -60,6 +60,17 @@ var DOMURL = self.URL || self.webkitURL || self;
   DOMURL.revokeObjectURL(png);
   document.getElementById('posterPng').innerHTML = '<img src="'+png+'"/>';
 
+iOSversion = function () {
+      var iOS = /iPad|iPhone|iPod/.test(navigator.platform) || /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
+
+  if (iOS) {
+    // supports iOS 2.0 and later: <http://bit.ly/TJjs1V>
+    var v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
+    return [parseInt(v[1], 10), parseInt(v[2], 10), parseInt(v[3] || 0, 10)];
+  }
+}
+
+
 renderPoster = function() {
 
 }
@@ -142,6 +153,9 @@ function drawImageRot(img,x,y,width,height,deg){
     ctx.rotate(rad * ( -1 ) );
     ctx.translate((x + width / 2) * (-1), (y + height / 2) * (-1));
 }
+
+
+
    var canvas = document.getElementById("canvas3");
     var ctx = canvas.getContext("2d");
     var image = new Image();

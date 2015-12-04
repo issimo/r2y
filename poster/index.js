@@ -223,7 +223,6 @@ function drawImageRot(img,x,y,width,height,deg){
     var v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
     var ver;
     ver = [parseInt(v[1], 10), parseInt(v[2], 10), parseInt(v[3] || 0, 10)];
-    alert(ver);
     if(ver[0] >= 9) {
       var rotDeg = 90;
     }

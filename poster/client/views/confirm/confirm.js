@@ -54,6 +54,13 @@ Template.confirm.events({
         });
     },
     'click #confirm' : function(){
+
+        $('#conSpan').html('<span>Please Wait...</span>');
+        function loaDone(){
+            $('#conSpan').html('<div id="confirm2" class="accept">CLICK HERE</div>');
+        }
+        setTimeout(loaDone,4000);
+
                 renderPoster();
                 $('svg').hide();
 
@@ -73,13 +80,12 @@ Template.confirm.events({
                     savePoster(shrUrl);
                     Session.set('shareUrl',shrUrl);
                   });
-
+    },
+    'click #confirm2' : function(){
+            //$('.uName').show();
+            Router.go('/share');
+                
         
-                //Session.set('setSvg',false);
-                $('#accMod').on('hidden.bs.modal', function (e) {
-                setTimeout(function(){ Router.go('/share');}, 1700);
-                });
-
     },
     'click #posRe' : function(){
         $('#reMod').modal('hide');

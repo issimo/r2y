@@ -59,22 +59,6 @@ var DOMURL = self.URL || self.webkitURL || self;
   var png = canvas.toDataURL("image/png");
   DOMURL.revokeObjectURL(png);
   document.getElementById('posterPng').innerHTML = '<img src="'+png+'"/>';
-
-iOSversion = function () {
-      var iOS = /iPad|iPhone|iPod/.test(navigator.platform) || /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-
-  if (iOS) {
-    // supports iOS 2.0 and later: <http://bit.ly/TJjs1V>
-    var v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
-    return [parseInt(v[1], 10), parseInt(v[2], 10), parseInt(v[3] || 0, 10)];
-  }
-}
-
-
-renderPoster = function() {
-
-}
-
   // Now is done
   console.log( png );
   return png;
@@ -136,19 +120,14 @@ function drawImageIOSFix(ctx, img, sx, sy, sw, sh, dx, dy, dw, dh) {
 }
 
 function drawImageRot(img,x,y,width,height,deg){
-
     //Convert degrees to radian 
     var rad = deg * Math.PI / 180;
-
     //Set the origin to the center of the image
     ctx.translate(x + width / 2, y + height / 2);
-
     //Rotate the canvas around the origin
     ctx.rotate(rad);
-
     //draw the image    
     ctx.drawImage(img,width / 2 * (-1),height / 2 * (-1),width,height);
-
     //reset the canvas  
     ctx.rotate(rad * ( -1 ) );
     ctx.translate((x + width / 2) * (-1), (y + height / 2) * (-1));
@@ -234,19 +213,6 @@ function drawImageRot(img,x,y,width,height,deg){
         var finalHeight = destHeight/vertSquashRatio;
         var finalWidth = finalHeight * imgRatio;
         drawImageRot(image,18, 0, finalWidth-6, finalHeight-77,rotDeg);
-
-    /*
-      alert("iOS");
-      if (imgRatio > canRatio){
-        destY = destY +21;
-        drawImageIOSFix(ctx,image,0, canvas.width,canvas.height, destX, destY, canvas.width/posterScale, scaledHeight/posterScale);
-      }
-      else {
-        destY = destY +21;
-        drawImageIOSFix(ctx,image,0, 0,canvas.width,canvas.height, destX, destY, scaledWidth/posterScale, canvas.height/posterScale);
-
-      }
-      */
   }
   else {
     drawImageRot(image,10, destY, destWidth, destHeight,rotDeg);
@@ -261,11 +227,5 @@ function drawImageRot(img,x,y,width,height,deg){
     Session.set('pngRes',png);
     }
     image.src = document.getElementById("userImage").src;
-
-
-
 }
-
-
-
 

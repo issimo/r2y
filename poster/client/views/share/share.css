@@ -41,7 +41,7 @@ svg {
     right: 0;
     bottom: 0;
     margin: 0 auto;
-    z-index:999;
+    z-index:99;
 }
 #dlIcon {
     display:inline-block;
@@ -50,13 +50,14 @@ svg {
     right: 0;
     bottom: 0%;
     margin: 0 auto;
-    z-index:999;
+    z-index:99;
+    cursor:pointer;
 }
 
 #dlIcon a{margin:7px 20px;width:40px;}
 
 .back {
-    z-index: 999;
+    z-index: 100;
 }
 
 #dwnld img {

@@ -216,7 +216,7 @@ function drawImageRot(img,x,y,width,height,deg){
     //drawImageRot(image,10, destY, destWidth, destHeight,rotDeg);
     //drawImageIOSFix(ctx,image2,0, 0,365*posterScale,515*posterScale, 0, 0, 365, 515);
 
-/*
+
     // Check for iOS version to know if to rotate or not
   if (iOS) {
     // supports iOS 2.0 and later: <http://bit.ly/TJjs1V>
@@ -225,13 +225,10 @@ function drawImageRot(img,x,y,width,height,deg){
     ver = [parseInt(v[1], 10), parseInt(v[2], 10), parseInt(v[3] || 0, 10)];
     alert(ver);
     if(ver[0] >= 9) {
-      rotDeg = 0;
-    }
-    else {
-      rotDeg = 270;
+      var rotDeg = 90;
     }
   }
-*/
+
 
   if (iOS) {
         var vertSquashRatio = detectVerticalSquash(image);

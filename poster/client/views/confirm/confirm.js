@@ -55,8 +55,7 @@ Template.confirm.events({
     },
     'click #confirm' : function(){
             //$('.uName').show();
-        if(true)
-            { 
+
                 //$(".delete,.accept,.retake").hide();
                 //insert iphone image css rotate stuff here
                 var ioS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
@@ -83,20 +82,12 @@ Template.confirm.events({
                     Session.set('shareUrl',shrUrl);
                   });
 
-
+        
                 //Session.set('setSvg',false);
                 $('#accMod').on('hidden.bs.modal', function (e) {
                 setTimeout(function(){ Router.go('/share');}, 1700);
                 });
 
-            }
-            else{
-                $('svg').show();
-                $('#svgHome').hide();
-                $('#naMod').modal('show');
-                //$('uName').focusin();
-                return false;
-            }
     },
     'click #posRe' : function(){
         $('#reMod').modal('hide');

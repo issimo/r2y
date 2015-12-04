@@ -2,7 +2,7 @@
 
     <div class="cptCnt conf">
             <img class="delete img-responsive" src="pix/delete.png" data-toggle="modal" data-target="#delMod">
-            <img id="confirm" class="accept img-responsive" src="pix/check.png" data-toggle="modal" data-target="#accMod">
+            <span class="accept" id="conSpan"><span>Please Wait...</span></span>
             <img class="retake img-responsive" src="pix/retake.png" data-toggle="modal" data-target="#reMod">
             <button id="rotatePoster">Rotate</button>
 
@@ -83,8 +83,10 @@
           });
         //var imgPng = svgToPng();
         //console.log(imgPng);
-   }
-            
+   
+      setTimeout(function(){$('#conSpan').html('<img id="confirm" class="accept img-responsive" src="pix/check.png" data-toggle="modal" data-target="#accMod">')},4000);
+      }
+        
             </script>
 
 <!-- Modal -->
@@ -139,10 +141,10 @@
         <h4 class="modal-title">All Done!</h4>
       </div>
       <div class="modal-body">
-        <p>Poster added to the Gallery! Share it on the next page!</p>
+        <p>Your poster is being added to the Gallery! Wait a few seconds and click <b>OK</b> below to go to the share page!</p>
       </div>
       <div class="modal-footer">
-       <button type="button" class="btn btn-default" id="posOk" data-dismiss="modal">Ok</button>
+       <button type="button" class="btn btn-default" id="posOk" data-dismiss="modal">OK</button>
 
       </div>
     </div>

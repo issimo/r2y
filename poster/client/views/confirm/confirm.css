@@ -34,10 +34,26 @@ body svg {
 }
 
 .conf{background:none;}
-.accept{width:40px !important;left:45%;margin-top:12px;cursor:pointer;position:absolute;}
+.accept{width:40px !important;left:42%;margin-top:8px;cursor:pointer;position:absolute;}
 .conf .delete,.retake,.accept{z-index:3;width:25px;}
 .uName{display:none; background-color:transparent;border:none;color:#f8f8f8;text-align:center;height:33px;width:50%;position:absolute;top:45%;right:25%;text-transform:uppercase;font-size:11px;z-index:-22;font-weight:bold;}
-.urPos{position:absolute;z-index:2;    
+#conSpan span{
+    display:inline-block;
+    font-weight:800;
+    width:100px !important;
+    text-transform:uppercase;
+    margin-left:-15px;
+    color:#fff;
+    -webkit-animation: pulsate 1s ease-out;
+    -webkit-animation-iteration-count: 5; 
+}
+
+@-webkit-keyframes pulsate {
+    0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+    50% {opacity: 1.0;}
+    100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
+}
+.urPos{position:absolute;z-index:1.5;    
     top: 0;
     bottom: 0;
     right: 0;

@@ -203,7 +203,7 @@ function drawImageRot(img,x,y,width,height,deg){
     var rotDeg = Session.get('currentDeg');
         
     var iOS = /iPad|iPhone|iPod/.test(navigator.platform) || /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
-        if (iOS){var rotDeg = 90; console.log("ios");}
+        //if (iOS){var rotDeg = 90; console.log("ios");}
         
     var posterScale = 515/365;
 
@@ -215,6 +215,23 @@ function drawImageRot(img,x,y,width,height,deg){
     // Draw user image and apply rotation if any
     //drawImageRot(image,10, destY, destWidth, destHeight,rotDeg);
     //drawImageIOSFix(ctx,image2,0, 0,365*posterScale,515*posterScale, 0, 0, 365, 515);
+
+/*
+    // Check for iOS version to know if to rotate or not
+  if (iOS) {
+    // supports iOS 2.0 and later: <http://bit.ly/TJjs1V>
+    var v = (navigator.appVersion).match(/OS (\d+)_(\d+)_?(\d+)?/);
+    var ver;
+    ver = [parseInt(v[1], 10), parseInt(v[2], 10), parseInt(v[3] || 0, 10)];
+    alert(ver);
+    if(ver[0] >= 9) {
+      rotDeg = 0;
+    }
+    else {
+      rotDeg = 270;
+    }
+  }
+*/
 
   if (iOS) {
         var vertSquashRatio = detectVerticalSquash(image);

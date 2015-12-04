@@ -1,8 +1,6 @@
 Template.home.events({
     'click #newPost':function(){
-
     Router.go('/capture');
-
 }
 });
 

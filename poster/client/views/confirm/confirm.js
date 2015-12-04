@@ -72,16 +72,16 @@ Template.confirm.events({
                   var dwnBlob = dataURItoBlob(dwnUrl);
                   var shrUrl;
 
-                      Cloudinary._upload_file(dwnBlob, {}, function(err, res) {
-                        if (err){
-                          console.log(err);
-                          return;
-                        }
+                  Cloudinary._upload_file(dwnBlob, {}, function(err, res) {
+                    if (err){
+                      console.log(err);
+                      return;
+                    }
 
-                        shrUrl = res.secure_url;
-                        savePoster(shrUrl);
-                        Session.set('shareUrl',shrUrl);
-                      });
+                    shrUrl = res.secure_url;
+                    savePoster(shrUrl);
+                    Session.set('shareUrl',shrUrl);
+                  });
 
 
                 //Session.set('setSvg',false);

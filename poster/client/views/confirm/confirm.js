@@ -53,7 +53,7 @@ Template.confirm.events({
         Session.set('setSvg',false);
         });
     },
-    'click .accept' : function(){
+    'click #confirm' : function(){
             //$('.uName').show();
         if(true)
             { 

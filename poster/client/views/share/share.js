@@ -23,9 +23,7 @@ if (Meteor.isClient) {
     siteOrder: ['twitter', 'facebook'],
     sites: {
         'facebook': {
-        'buttonText': 'Share on Facebook',
-        'appId':'1708182292726496',
-        'version':'v2.5'
+        'buttonText': 'Share on Facebook'
       },
         'twitter': {
         'buttonText': 'Share on Twitter'
@@ -46,7 +44,7 @@ Template.share.helpers({
         title: 'My R2Y Poster from r2y.herokuapp.com #RoadToYesterdayPoster',
         author: '3WP',
         excerpt:'I just made my own R2Y poster at r2y.herokuapp.com!!',
-        url: shareLink,
+        url: shareLink
   }
 },
   poster: function() { 

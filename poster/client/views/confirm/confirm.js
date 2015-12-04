@@ -54,9 +54,12 @@ Template.confirm.events({
         });
     },
     'click #confirm' : function(){
-            //$('.uName').show();
-
-                //$(".delete,.accept,.retake").hide();
+        $('#conSpan').html('<span>Please Wait...</span>');
+        function loaDone(){
+            $('#conSpan').html('<div id="confirm2" class="accept">CLICK HERE</div>');
+        }
+        setTimeout(loaDone,4000);
+        //$(".delete,.accept,.retake").hide();
                 //insert iphone image css rotate stuff here
                 var ioS = /iPad|iPhone|iPod/.test(navigator.userAgent) && !window.MSStream;
                 //if(ioS==true){$('#xIssimo').show();$('#userImage').addClass('rotate90R');}
@@ -81,13 +84,12 @@ Template.confirm.events({
                     savePoster(shrUrl);
                     Session.set('shareUrl',shrUrl);
                   });
-
+    },
+    'click #confirm2' : function(){
+            //$('.uName').show();
+            Router.go('/share');
+                
         
-                //Session.set('setSvg',false);
-                $('#accMod').on('hidden.bs.modal', function (e) {
-                setTimeout(function(){ Router.go('/share');}, 1700);
-                });
-
     },
     'click #posRe' : function(){
         $('#reMod').modal('hide');

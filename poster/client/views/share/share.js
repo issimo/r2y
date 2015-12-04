@@ -23,7 +23,9 @@ if (Meteor.isClient) {
     siteOrder: ['twitter', 'facebook'],
     sites: {
         'facebook': {
-        'buttonText': 'Share on Facebook'
+        'buttonText': 'Share on Facebook',
+        'appId':'1708182292726496',
+        'version':'v2.5'
       },
         'twitter': {
         'buttonText': 'Share on Twitter'
